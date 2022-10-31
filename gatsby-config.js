@@ -1,6 +1,17 @@
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://www.magomade.dk`,
   },
-  plugins: [],
-}
+  plugins: [
+    {
+      resolve: `gatsby-source-shopify`,
+      options: {
+        password: process.env.SHOPIFY_SHOP_PASSWORD,
+        storeUrl: process.env.GATSBY_SHOPIFY_STORE_URL,
+      },
+    },
+    "gatsby-plugin-image",
+  ],
+};
