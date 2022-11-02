@@ -1,20 +1,25 @@
 import React from 'react'
 import { navigate } from "gatsby-link";
-
+import useStore from "../context/StoreContext";
 import styled from "styled-components";
-import "./global.css";
+
 
 const ProductCard = ({ product }) => {
+    const { addVariantToCart } = useStore()
+
     return (
       <Wrapper>
-        <AddButton onClick={() => alert("Added to cart!")}>
+        <AddButton onClick={() => addVariantToCart(product, 1)}>
           <p>+</p>
         </AddButton>
-        <ContentWrapper onClick={() => navigate(`${product.handle}`)}>
+        <ContentWrapper onClick={() => navigate(`/products/${product.handle}`)}>
           <Image src={product.featuredImage.src} alt="{product.altText}" />
           <TextWrapper>
             <Title>{product.title}</Title>
-            <Price>{product.priceRangeV2.maxVariantPrice.amount}DKK</Price>
+            <DetailWrapper>
+              <Price>{product.priceRangeV2.maxVariantPrice.amount} DKK</Price>
+              <Vendor>{product.vendor}</Vendor>
+            </DetailWrapper>
           </TextWrapper>
         </ContentWrapper>
       </Wrapper>
@@ -27,47 +32,55 @@ const Wrapper = styled.div`
   display: grid;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  border-radius: 20px;
-
+  width: 20rem;
+  top: 0px;
   gap: 10px;
   cursor: pointer;
   position: relative;
-  box-shadow: 0px 20px 40px rgba(52, 53, 99, 0.2),
-    0px 1px 3px rgba(0, 0, 0, 0.05);
 `;
 
-const ContentWrapper = styled.div``;
+const ContentWrapper = styled.div`
+  height: 28rem;
+`;
 
 const Image = styled.img`
-  width: 200px;
-  height: 300px;
+  width: 20rem;
+  top: 0;
   object-fit: cover;
-  border-radius: 20px;
   margin: 0;
 `;
 
 const TextWrapper = styled.div`
   position: absolute;
-  bottom: 0px;
-  left: 0px;
-  border-radius: 0 0 20px 20px;
-  background: rgba(255, 255, 255, 0.2);
-  width: 200px;
-  padding: 10px 0;
-  backdrop-filter: blur(40px);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 1rem 0;
+  width: 20rem;
+`;
+
+const DetailWrapper = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Title = styled.p`
   font-weight: 600;
-  text-align: center;
   margin: 0;
-  color: #014c40;
+  color: #111111;
+  width: 8rem;
+  line-height: 2rem;
 `;
 
 const Price = styled.p`
   font-weight: normal;
-  text-align: center;
+  margin: 0;
+  padding: 0.5rem 0;
+`;
+
+const Vendor = styled.p`
+  font-weight: normal;
   margin: 0;
 `;
 
@@ -75,7 +88,8 @@ const AddButton = styled.div`
   position: absolute;
   top: 20px;
   right: 20px;
-  background: #014c40;
+  background: transparent;
+  border: 1px solid #fff;
   padding: 10px;
   width: 40px;
   height: 40px;
@@ -85,13 +99,17 @@ const AddButton = styled.div`
   align-items: center;
 
   :hover {
-    transform: scale(1.2);
     transition: 0.2s;
+    background: #fff;
   }
 
   p {
     margin: 0;
-    color: white;
+    color: #fff;
     font-weight: bold;
+
+    :hover {
+      color: #FF5802
+    }
   }
 `;

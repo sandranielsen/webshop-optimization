@@ -20,8 +20,9 @@ exports.createPages = async ({ graphql, actions }) => {
               }
             }
             description
-            images {
+            featuredImage {
               src
+              altText
             }
           }
         }

@@ -1,0 +1,148 @@
+/*** Global elements ***/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* slider styling */
+body *::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+h1, h2 {
+  font-family: HelveticaNeue;
+  font-weight: 900;
+  }
+
+h3 {
+  font-size: 2rem;
+  font-family: HelveticaNeue;
+  font-weight: 700;
+}
+
+h4, h5, h6 {
+  font-family: HelveticaNeue;
+  font-weight: 700;
+}
+
+p, a, button, table {
+  font-family: HelveticaNeue;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* Fonts */
+@font-face {
+  font-family: 'HelveticaNeue';
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url(/fonts/HelveticaNeue-Thin.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url(/fonts/HelveticaNeue-Light.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url(/fonts/HelveticaNeue-CondensedBlack.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url(/fonts/HelveticaNeue-BoldCondensed.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  font-weight: 700;
+  font-display: swap;
+  font-style: Italic;
+  font-named-instance: 'Regular';
+  src: url(/fonts/HelveticaNeue-Bold-Italic.woff2) format("woff2");
+}
+
+/* Header */
+.header-logo {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    margin: auto;
+}
+
+.header-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.header-links {
+    display: flex;
+    justify-content: left;
+}
+
+.navbar {
+  background-color: transparent;
+  color: #fff;
+  fill: #fff;
+  transition: 0.5s;
+}
+
+.navbar-alt {
+  background-color: white;
+  color: #FF5802;
+}
+
+.navbar.active {
+  background-color: #fff;
+  color: #FF5802;
+  transition: 0.5s;
+}
+
+.navbar a {
+  color: #fff;
+}
+
+.navbar.active a {
+  color: #FF5802;
+}
+
+.navbar #logo-primary {
+  display: block;
+}
+
+.navbar.active #logo-primary {
+  display: none;
+}
+
+.navbar #logo-secondary {
+  display: none;
+}
+
+.navbar.active #logo-secondary {
+  display: block;
+}
