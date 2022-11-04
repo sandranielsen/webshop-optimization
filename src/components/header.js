@@ -63,7 +63,7 @@ export default Header;
 
 /* Styling - styled-components */
 const HeaderWrapper = styled.header`
-  padding: 1rem 2rem;
+  padding: 1rem 4rem;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   width: 100%;

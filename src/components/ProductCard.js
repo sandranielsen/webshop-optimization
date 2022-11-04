@@ -2,15 +2,19 @@ import React from 'react'
 import { navigate } from "gatsby-link";
 import useStore from "../context/StoreContext";
 import styled from "styled-components";
+import Plus from "../images/plus.svg";
 
 
 const ProductCard = ({ product }) => {
-    const { addVariantToCart } = useStore()
+  const { addVariantToCart } = useStore()
 
     return (
       <Wrapper>
-        <AddButton onClick={() => addVariantToCart(product, 1)}>
-          <p>+</p>
+        <AddButton
+          onClick={() => addVariantToCart(product, 1)}
+          className="add-button"
+        >
+          <img src={Plus} alt="Plus" className="button-icon" />
         </AddButton>
         <ContentWrapper onClick={() => navigate(`/products/${product.handle}`)}>
           <Image src={product.featuredImage.src} alt="{product.altText}" />
@@ -97,7 +101,7 @@ const AddButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
+  
   :hover {
     transition: 0.2s;
     background: #fff;

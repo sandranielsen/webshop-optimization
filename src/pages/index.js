@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo title="MagoMade" />
       <ContentWrapper>
         <Overlay></Overlay>
         <BannerImage src={BannerImg} />
@@ -65,6 +65,14 @@ export const query = graphql`
           altText
         }
         vendor
+        media {
+          preview {
+            image {
+              src
+              altText
+            }
+          }
+        }
       }
     }
   }
@@ -97,7 +105,7 @@ const BannerImage = styled.img`
 const TextWrapper = styled.div`
   position: absolute;
   bottom: 4rem;
-  left: 2rem;
+  left: 3rem;
   display: grid;
   gap: 1rem;
   z-index: 3;
@@ -115,7 +123,7 @@ const ProductWrapper = styled.div`
   flex-direction: row;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
-  margin: 1rem 2rem;
+  margin: 1rem 4rem;
   justify-content: space-between;
   gap: 40px;
 `;

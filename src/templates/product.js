@@ -1,63 +1,106 @@
-import { navigate } from "gatsby-link";
 import React from "react";
 import styled from "styled-components";
-
-import Layout from "../components/layout";
-import PrimaryButton from "../components/PrimaryButton";
 import useStore from "../context/StoreContext";
 import useInput from "../utils/useInput";
+import { graphql } from "gatsby";
 
-const ProductTemplate = ({ pageContext }) => {
+
+import LayoutAlt from "../components/LayoutAlt";
+import SecondaryButton from "../components/SecondaryButton";
+import ProductCard from "../components/ProductCard";
+
+const ProductTemplate = ({ pageContext, data }) => {
   const { product } = pageContext;
   const { addVariantToCart } = useStore();
   const bind = useInput(1);
+  const { nodes } = data.allShopifyProduct;
+
 
   return (
-    <Layout>
-      <BackButton onClick={() => navigate(-1)}>{"< "} Back</BackButton>
+    <LayoutAlt>
       <Wrapper>
-        <Image src={product.featuredImage.src} />
+        <Image src={product.featuredImage.src} alt="{product.altText}" />
         <InfoContainer>
+          <Vendor>{product.vendor}</Vendor>
           <Title>{product.title}</Title>
-          <Subtitle>{product.priceRangeV2.maxVariantPrice.amount} DKK</Subtitle>
-          <p>{product.description}</p>
-          <InputForm>
+          <DetailsContainer>
             <Subtitle>
-              <label htmlFor="qty">Quantity:</label>
+              {product.priceRangeV2.maxVariantPrice.amount} DKK
             </Subtitle>
-            <Input placeholder="1" id="qty" type="number" {...bind} />
-          </InputForm>
-          <PrimaryButton
-            text="Add to cart"
-            onClick={() => addVariantToCart(product, bind.value)}
-          />
+            <PurchaseContainer>
+              <InputForm>
+                <Subtitle>
+                  <label htmlFor="qty"></label>
+                </Subtitle>
+                <Input placeholder="1" id="qty" type="number" {...bind} />
+              </InputForm>
+              <SecondaryButton
+                text="Læg i indkøbskurv"
+                onClick={() => addVariantToCart(product, bind.value)}
+              />
+            </PurchaseContainer>
+          </DetailsContainer>
+          <Description>{product.description}</Description>
         </InfoContainer>
       </Wrapper>
-    </Layout>
+
+      <TitleContainer>
+        <Headline>Du vil sikkert også synes om...</Headline>
+      </TitleContainer>
+      <ProductWrapper>
+        {nodes?.map((product, index) => (
+          <ProductCard key={index} product={product} />
+        ))}
+      </ProductWrapper>
+    </LayoutAlt>
   );
 };
 
 export default ProductTemplate;
 
-const BackButton = styled.p`
-  cursor: pointer;
-  color: #014c40;
-  margin-left: 40px;
-  font-size: 14px;
-  font-weight: 600;
+
+export const query = graphql`
+  {
+    allShopifyProduct {
+      nodes {
+        title
+        handle
+        variants {
+          shopifyId
+        }
+        priceRangeV2 {
+          maxVariantPrice {
+            amount
+          }
+        }
+        description
+        featuredImage {
+          src
+          altText
+        }
+        vendor
+        media {
+          preview {
+            image {
+              src
+              altText
+            }
+          }
+        }
+      }
+    }
+  }
 `;
 
 const Wrapper = styled.div`
-  margin: 40px;
+  margin: 0 3rem 4rem;
   display: grid;
-  grid-template-columns: 400px auto;
-  gap: 40px;
+  grid-template-columns: 50% 45%;
+  gap: 5%;
 `;
 
 const Image = styled.img`
-  width: 400px;
-  height: 500px;
-  border-radius: 30px;
+  width: 100%;
   object-fit: cover;
 `;
 
@@ -65,19 +108,52 @@ const InfoContainer = styled.div`
   display: grid;
   align-items: flex-start;
   height: fit-content;
-  gap: 10px;
+  width: 100%;
   p {
-    margin: 0;
+    margin: auto 0;
   }
 `;
 
-const Title = styled.h1`
+const Vendor = styled.h4`
   margin: 0;
+  font-weight: 200;
+  font-size: 16px;
+`;
+
+const Title = styled.h1`
+  margin: 1rem 0 2rem;
+  font-size: 40px;
+`;
+
+const Headline = styled.h4`
+  margin: 1rem 0 2rem;
+  font-size: 32px;
 `;
 
 const Subtitle = styled.p`
-  font-weight: bold;
   max-width: 500px;
+  font-weight: 200;
+  font-size: 24px;
+`;
+
+const Description = styled.p`
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 1.5;
+`;
+
+const DetailsContainer = styled.p`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 4rem;
+`;
+
+const PurchaseContainer = styled.p`
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
 `;
 
 const InputForm = styled.form`
@@ -91,7 +167,7 @@ const InputForm = styled.form`
 
 const Input = styled.input`
   border-radius: 20px;
-  border: 2px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 82, 2, 0.5);
   padding: 10px 20px;
   max-width: 80px;
   font-size: 12px;
@@ -99,4 +175,19 @@ const Input = styled.input`
     outline: none;
     outline-color: #014c40;
   }
+`;
+
+const ProductWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  margin: 1rem 3rem;
+  justify-content: space-between;
+  gap: 40px;
+`;
+
+const TitleContainer = styled.div`
+  display: flex;
+  justify-content: center;
 `;

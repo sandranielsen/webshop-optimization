@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 
-import Header from "./Header";
+import HeaderAlt from "./HeaderAlt";
 import { Link } from "gatsby";
 import "./layout.css";
 
-const Layout = ({ children }) => {
+const LayoutAlt = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <HeaderAlt siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div>
         <main>{children}</main>
         <Footer>
@@ -32,11 +32,11 @@ const Layout = ({ children }) => {
   );
 };
 
-Layout.propTypes = {
+LayoutAlt.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default Layout;
+export default LayoutAlt;
 
 const Footer = styled.footer`
   background: linear-gradient(

@@ -24,6 +24,15 @@ exports.createPages = async ({ graphql, actions }) => {
               src
               altText
             }
+            vendor
+            media {
+              preview {
+                image {
+                  src
+                  altText
+                }
+              }
+            }
           }
         }
       }

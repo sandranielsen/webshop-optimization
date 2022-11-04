@@ -113,7 +113,11 @@ a {
 }
 
 .navbar-alt {
-  background-color: white;
+  background-color: #fff;
+  color: #FF5802;
+}
+
+.navbar-alt a {
   color: #FF5802;
 }
 
@@ -146,3 +150,19 @@ a {
 .navbar.active #logo-secondary {
   display: block;
 }
+
+/* Button styling */
+
+.button-icon {
+  width: 12px;
+}
+
+/* Page banner styling */
+
+
+
+
+
+
+
+

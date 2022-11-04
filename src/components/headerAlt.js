@@ -3,14 +3,12 @@ import styled from "styled-components";
 
 import Cart from "../images/cart.svg";
 import Search from "../images/search.svg";
-import Logo from "../images/logo-white.png";
 import LogoColor from "../images/logo-color.png";
 
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
-import { useState } from "react";
 
-const Header = ({ siteTitle }) => {
+const HeaderAlt = ({ siteTitle }) => {
 
   return (
     <HeaderWrapper className="navbar-alt">
@@ -41,23 +39,24 @@ const Header = ({ siteTitle }) => {
   );
 };
 
-Header.propTypes = {
+HeaderAlt.propTypes = {
   siteTitle: PropTypes.string,
 };
 
-Header.defaultProps = {
+HeaderAlt.defaultProps = {
   siteTitle: ``,
 };
 
-export default Header;
+export default HeaderAlt;
 
 /* Styling - styled-components */
 const HeaderWrapper = styled.header`
-  padding: 1rem 2rem;
+  padding: 1rem 4rem;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   width: 100%;
-  position: fixed;
+  position: sticky;
+  top: 0;
   z-index: 2;
 
   .site-title {
