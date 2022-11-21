@@ -29,9 +29,9 @@ const Header = ({ siteTitle }) => {
 
     <HeaderWrapper className={navbar ? 'navbar active' : 'navbar'}>
       <LinksWrapper>
-        <Link to="/products">Opskrifter</Link>
+        <Link to="/products">Patterns</Link>
         <Link to="/guides">Guides</Link>
-        <Link to="/about">Om</Link>
+        <Link to="/about">About</Link>
       </LinksWrapper>
 
       <Link to="/" className="site-title">

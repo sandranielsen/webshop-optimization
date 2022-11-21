@@ -13,9 +13,9 @@ const HeaderAlt = ({ siteTitle }) => {
   return (
     <HeaderWrapper className="navbar-alt">
       <LinksWrapper>
-        <Link to="/products">Opskrifter</Link>
+        <Link to="/products">Patterns</Link>
         <Link to="/guides">Guides</Link>
-        <Link to="/about">Om</Link>
+        <Link to="/about">About</Link>
       </LinksWrapper>
 
       <Link to="/" className="site-title">
@@ -70,6 +70,10 @@ const HeaderWrapper = styled.header`
     font-family: Helvetica Neue;
     :hover {
       transform: scale(1.07);
+    }
+
+    :active {
+      color: #f4bbf8;
     }
   }
 `;

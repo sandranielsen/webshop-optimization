@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import useStore from "../context/StoreContext";
 
-import Layout from "../components/layout";
+import LayoutAlt from "../components/LayoutAlt";
 import Seo from "../components/seo";
 import ProductRow from "../components/ProductRow";
 import PrimaryButton from "../components/PrimaryButton";
@@ -12,7 +12,7 @@ const Cart = () => {
   const { cart, checkout } = useStore();
 
   return (
-    <Layout>
+    <LayoutAlt>
       <Seo title="My Cart" />
       <Wrapper>
         <HeaderWrapper>
@@ -33,7 +33,7 @@ const Cart = () => {
           />
         </ButtonWrapper>
       </Wrapper>
-    </Layout>
+    </LayoutAlt>
   );
 };
 

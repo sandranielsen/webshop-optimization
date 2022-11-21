@@ -4,10 +4,11 @@ import useStore from "../context/StoreContext";
 import useInput from "../utils/useInput";
 import { graphql } from "gatsby";
 
-
 import LayoutAlt from "../components/LayoutAlt";
 import SecondaryButton from "../components/SecondaryButton";
 import ProductCard from "../components/ProductCard";
+import Seo from "../components/seo";
+
 
 const ProductTemplate = ({ pageContext, data }) => {
   const { product } = pageContext;
@@ -18,6 +19,7 @@ const ProductTemplate = ({ pageContext, data }) => {
 
   return (
     <LayoutAlt>
+      <Seo title={ product.title } />
       <Wrapper>
         <Image src={product.featuredImage.src} alt="{product.altText}" />
         <InfoContainer>
@@ -35,7 +37,7 @@ const ProductTemplate = ({ pageContext, data }) => {
                 <Input placeholder="1" id="qty" type="number" {...bind} />
               </InputForm>
               <SecondaryButton
-                text="Læg i indkøbskurv"
+                text="Add to cart"
                 onClick={() => addVariantToCart(product, bind.value)}
               />
             </PurchaseContainer>
@@ -45,7 +47,7 @@ const ProductTemplate = ({ pageContext, data }) => {
       </Wrapper>
 
       <TitleContainer>
-        <Headline>Du vil sikkert også synes om...</Headline>
+        <Headline>You may also like...</Headline>
       </TitleContainer>
       <ProductWrapper>
         {nodes?.map((product, index) => (

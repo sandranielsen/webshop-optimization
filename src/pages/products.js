@@ -13,9 +13,9 @@ const Products = ({ data }) => {
 
     return (
       <LayoutAlt>
-        <Seo title="Produkter | MagoMade" />
+        <Seo title="Products | MagoMade" />
         <Banner>
-          <Title>Produkter</Title>
+          <Title>Products</Title>
         </Banner>
 
         <Wrapper>

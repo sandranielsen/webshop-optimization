@@ -20,11 +20,11 @@ const IndexPage = ({ data }) => {
         <Overlay></Overlay>
         <BannerImage src={BannerImg} />
         <TextWrapper>
-          <Subtitle>Nyhed</Subtitle>
+          <Subtitle>New</Subtitle>
           <Title>Beachy Top Pattern</Title>
           <ButtonWrapper>
             <PrimaryButton
-              text="Find opskrifter"
+              text="Find patterns"
               onClick={() => navigate("products")}
             />
           </ButtonWrapper>
@@ -32,7 +32,7 @@ const IndexPage = ({ data }) => {
       </ContentWrapper>
 
       <ContentWrapper>
-        <Headline>Opskrifter</Headline>
+        <Headline>Patterns</Headline>
         <ProductWrapper>
           {nodes?.map((product, index) => (
             <ProductCard key={index} product={product} />
