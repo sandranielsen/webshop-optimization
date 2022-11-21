@@ -1,0 +1,262 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*** Global elements ***/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Slider styling */
+body *::-webkit-scrollbar {
+  overflow: hidden; 
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+h1, h2 {
+  font-family: HelveticaNeue;
+  font-weight: 900;
+  }
+
+h3 {
+  font-size: 2rem;
+  font-family: HelveticaNeue;
+  font-weight: 700;
+}
+
+h4, h5, h6 {
+  font-family: HelveticaNeue;
+  font-weight: 700;
+}
+
+p, a, button, table {
+  font-family: HelveticaNeue;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* Fonts */
+@font-face {
+  font-family: 'HelveticaNeue';
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url(/fonts/HelveticaNeue-Thin.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url(/fonts/HelveticaNeue-Light.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url(/fonts/HelveticaNeue-CondensedBlack.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url(/fonts/HelveticaNeue-BoldCondensed.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  font-weight: 700;
+  font-display: swap;
+  font-style: Italic;
+  font-named-instance: 'Regular';
+  src: url(/fonts/HelveticaNeue-Bold-Italic.woff2) format("woff2");
+}
+
+/*** Mobile/tablet styling ****/
+
+#side-padding {
+  padding: 0 2rem;
+}
+
+#padding {
+  padding: 2rem;
+}
+
+/* Navbar */
+#nav-item {
+    font-family: HelveticaNeue;
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+#nav-item:hover {
+  transform: scale(1.07);
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    padding: 1rem 2rem;
+    height: 6rem;
+    background-color: transparent;
+    color: #fff;
+    fill: #fff;
+    transition: 0.5s;
+    z-index: 21;
+}
+
+.navbar-alt {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 1rem 2rem;
+    height: 6rem;
+    background-color: transparent;
+    color: #fff;
+    fill: #fff;
+    transition: 0.5s;
+    z-index: 21;
+    background-color: #fff;
+    color: #FF5802;
+}
+
+#navbar-alt a {
+  color: #FF5802;
+}
+
+.navbar.active {
+  background-color: #fff;
+  color: #FF5802;
+  transition: 0.5s;
+}
+
+.navbar a {
+  color: #fff;
+}
+
+.navbar.active #nav-item {
+  color: #FF5802;
+}
+
+.navbar #logo-primary {
+  display: block;
+}
+
+.navbar.active #logo-primary {
+  display: none;
+}
+
+.navbar #logo-secondary {
+  display: none;
+}
+
+.navbar.active #logo-secondary {
+  display: block;
+}
+
+/* Dropdown */
+.dropdown-content a:hover {
+  transform: scale(1.02);
+}
+
+.navbar.active #dropdown-container {
+  background-color: #fff;
+  border-top: 1px solid #FF5802;
+}
+
+#dropdown-container-alt {
+  background-color: #fff;
+  border-top: 1px solid #FF5802;
+}
+
+/* Mobile menu */
+.menu-container {
+  padding: 1rem 2rem;
+  height: 6rem;
+  display: flex;
+  margin: auto;
+}
+
+/* Button styling */
+
+.button-icon {
+  width: 12px;
+}
+
+/* Page banner styling */
+
+/* Footer - gradient */
+.footer-container {
+  background: linear-gradient(#e8b9a2 0%, rgba(250, 108, 34, 0.52) 0%, #f4bbf8 100%);
+} 
+
+/* Page header - gradient */
+.page-header {
+  background: linear-gradient(333deg,rgba(255,88,2,1) 0%,rgba(244,187,248,1) 32%,rgba(246,220,248,1) 47%,rgba(247,169,128,1) 100%);
+}
+
+/* Section - gradient */
+#preview-container {
+  background: linear-gradient(#e8b9a2 0%,rgba(249,197,170,.52) 0%,#f4bbf8 100%);
+}
+
+/* Button styling */
+#primary-button {
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: transparent;
+}
+
+#secondary-button {
+    color: #FF5802;
+    border: 1px solid #FF5802;
+    background-color: transparent;
+}
+
+/*** Desktop styling ***/
+
+@media only screen and (min-width: 768px) {
+  #side-padding  {
+  padding: 0 4rem;
+  }
+
+  #padding  {
+    padding: 4rem;
+  }
+  .navbar {
+    padding: 1rem 4rem;
+  }
+
+  .navbar-alt {
+    padding: 1rem 4rem;
+  }
+
+}
+
+
+
+
+
+
+

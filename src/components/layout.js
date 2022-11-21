@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import Header from "./Header";
 import { Link } from "gatsby";
-import "./layout.css";
+import "../styles/global.css";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
