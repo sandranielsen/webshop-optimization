@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import styled from "styled-components";
 
 import LayoutAlt from "../components/LayoutAlt";
 import Seo from "../components/seo";
@@ -14,15 +13,15 @@ const Products = ({ data }) => {
     return (
       <LayoutAlt>
         <Seo title="Products | MagoMade" />
-        <Banner>
-          <Title>Products</Title>
-        </Banner>
+        <div className="page-header flex h-40 mb-16">
+          <h1 className="text-white m-auto text-3xl uppercase">Products</h1>
+        </div>
 
-        <Wrapper>
+        <div id="side-padding" className="flex flex-row flex-wrap justify-between relative">
           {nodes?.map((product, index) => (
             <ProductCard key={index} product={product} />
           ))}
-        </Wrapper>
+        </div>
       </LayoutAlt>
     );
 }
@@ -63,38 +62,3 @@ export const query = graphql`
 `;
 
 
-
-const Wrapper = styled.div`
-  display: grid;
-  position: relative;
-  padding: 0 3rem;
-  grid-template-columns: repeat(3, auto);
-  justify-content: space-between;
-`;
-
-const Banner = styled.div`
-  width: 100%;
-  background-size: cover;
-  background: linear-gradient(
-    333deg,
-    rgba(255, 88, 2, 1) 0%,
-    rgba(244, 187, 248, 1) 32%,
-    rgba(246, 220, 248, 1) 47%,
-    rgba(247, 169, 128, 1) 100%
-  );
-  margin-bottom: 4rem;
-`;
-
-const Title = styled.h2`
-  color: #fff;
-  text-align: center;
-  text-transform: uppercase;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
-  margin: 0;
-  padding: 6rem;
-  max-height: 30rem;
-  font-size: 32px;
-`;

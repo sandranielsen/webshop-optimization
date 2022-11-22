@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 
 import useStore from "../context/StoreContext";
 
@@ -14,47 +13,27 @@ const Cart = () => {
   return (
     <LayoutAlt>
       <Seo title="My Cart" />
-      <Wrapper>
-        <HeaderWrapper>
-          <Text>Product</Text>
-          <Text>Quantity</Text>
-          <Text>Remove Item</Text>
-        </HeaderWrapper>
+      <div id="side-padding">
+        <div className="grid grid-cols-3 gap-8">
+          <p className="font-semibold text-sm">Product</p>
+          <p className="font-semibold text-sm">Quantity</p>
+          <p className="font-semibold text-sm">Remove Item</p>
+        </div>
         {cart.length > 0 ? (
           cart.map((item, index) => <ProductRow key={index} item={item} />)
         ) : (
-          <Text>Your cart is empty.</Text>
+          <p className="font-semibold text-sm">Your cart is empty.</p>
         )}
-        <ButtonWrapper>
+        <div className="flex justify-end">
           <PrimaryButton
             text="Checkout"
             onClick={() => window.open(checkout.webUrl)}
             disabled={cart.length === 0}
           />
-        </ButtonWrapper>
-      </Wrapper>
+        </div>
+      </div>
     </LayoutAlt>
   );
 };
 
 export default Cart;
-
-const Wrapper = styled.div`
-  margin: 40px;
-`;
-
-const HeaderWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 330px);
-  gap: 40px;
-`;
-
-const Text = styled.p`
-  font-weight: 600;
-  font-size: 14px;
-`;
-
-const ButtonWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-`;

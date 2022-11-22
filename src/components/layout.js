@@ -1,7 +1,6 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
-import styled from "styled-components";
 
 import Header from "./Header";
 import { Link } from "gatsby";
@@ -23,10 +22,9 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div>
         <main>{children}</main>
-        <Footer>
+        <footer className="footer-container">
           <Link>hello</Link>
-          
-        </Footer>
+        </footer>
       </div>
     </>
   );
@@ -37,11 +35,3 @@ Layout.propTypes = {
 };
 
 export default Layout;
-
-const Footer = styled.footer`
-  background: linear-gradient(
-    #e8b9a2 0%,
-    rgba(250, 108, 34, 0.52) 0%,
-    #f4bbf8 100%
-  );
-`;

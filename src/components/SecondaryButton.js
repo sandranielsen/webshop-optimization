@@ -1,42 +1,16 @@
 import React from "react";
-import styled from "styled-components";
 
 const SecondaryButton = ({ text, onClick, disabled = false }) => {
   return (
-    <ButtonWrapper onClick={onClick} disabled={disabled}>
-      <Title>{text}</Title>
-    </ButtonWrapper>
+    <button
+      className="bg-transparent text-[#ff5802] border border-[#ff5802] rounded-full h-10 w-fit flex justify-center items-center px-16 cursor-pointer hover:ease-in-out hover:duration-300 hover:bg-[#ff5802] hover:text-white"
+      onClick={onClick}
+      disabled={disabled}
+    >
+      <p className="font-light text-xs m-0">{text}</p>
+    </button>
   );
 };
 
 export default SecondaryButton;
 
-const ButtonWrapper = styled.button`
-  background: transparent;
-  color: #ff5802;
-  border: 1px solid #ff5802;
-  border-radius: 50px;
-  height: 40px;
-  width: fit-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 4rem;
-  cursor: pointer;
-
-  :hover {
-    background: #ff5802;
-    transition: 0.5s;
-    color: #fff;
-  }
-  :disabled {
-    transform: none;
-    cursor: not-allowed;
-  }
-`;
-
-const Title = styled.p`
-  margin: 0;
-  font-weight: 300;
-  font-size: 12px;
-`;

@@ -80,10 +80,10 @@ export default function Header({ siteTitle }) {
                           id="dropdown-container"
                           className="relative flex flex-col gap-8 pl-12 pr-56 py-6 my-8 rounded-b-lg"
                         >
-                          <Link id="nav-item" href="/collections/english">
+                          <Link id="nav-item" to="/">
                             English
                           </Link>
-                          <Link id="nav-item" href="/collections/dansk">
+                          <Link id="nav-item" to="/">
                             Dansk
                           </Link>
                         </div>
@@ -94,17 +94,17 @@ export default function Header({ siteTitle }) {
               )}
             </Popover>
 
-            <Link href="#" id="nav-item" className="text-base font-medium">
+            <Link to="/" id="nav-item" className="text-base font-medium">
               Guides
             </Link>
-            <Link href="/about" id="nav-item" className="text-base font-medium">
+            <Link to="/" id="nav-item" className="text-base font-medium">
               About
             </Link>
           </Popover.Group>
 
           {/* Logo */}
           <div className="flex justify-center">
-            <Link href="/">
+            <Link to="/">
               <img
                 src={Logo}
                 alt={siteTitle}
@@ -114,7 +114,7 @@ export default function Header({ siteTitle }) {
                 height={70}
               />
             </Link>
-            <Link href="/">
+            <Link to="/">
               <img
                 src={LogoColor}
                 alt={siteTitle}
@@ -128,10 +128,10 @@ export default function Header({ siteTitle }) {
 
           {/* Icon items */}
           <div className="md-hidden items-center justify-end flex gap-4">
-            <Link href="/search">
+            <Link to="/">
               <MagnifyingGlassIcon id="nav-item" className="h-5 w-5" />
             </Link>
-            <Link href="cart">
+            <Link to="/cart">
               <ShoppingBagIcon id="nav-item" className="h-5 w-5" />
             </Link>
           </div>
@@ -165,21 +165,21 @@ export default function Header({ siteTitle }) {
             </div>
             <div className="space-y-12 py-12 px-8">
               <div className="grid grid-cols-1 gap-y-8">
-                <Link href="#" id="navbar-alt" className="text-3xl">
+                <Link to="/" id="navbar-alt" className="text-3xl">
                   Patterns
                 </Link>
 
-                <Link href="#" id="navbar-alt" className="text-3xl">
+                <Link to="/" id="navbar-alt" className="text-3xl">
                   Guides
                 </Link>
 
-                <Link href="#" id="navbar-alt" className="text-3xl">
+                <Link to="/" id="navbar-alt" className="text-3xl">
                   About
                 </Link>
               </div>
             </div>
             <div className="flex justify-center my-56 h-full w-screen">
-              <Link href="/">
+              <Link to="/">
                 <img
                   src={Logo}
                   alt={siteTitle}

@@ -1,119 +1,48 @@
 import React from 'react'
 import { navigate } from "gatsby-link";
 import useStore from "../context/StoreContext";
-import styled from "styled-components";
-import Plus from "../images/plus.svg";
+import {
+  PlusIcon
+} from "@heroicons/react/24/outline";
 
 
 const ProductCard = ({ product }) => {
   const { addVariantToCart } = useStore()
 
     return (
-      <Wrapper>
-        <AddButton
+      <div className="grid justify-center items-center w-80 top-0 gap-4 cursor-pointer relative">
+        <button
           onClick={() => addVariantToCart(product, 1)}
-          className="add-button"
+          className="absolute top-4 right-4 bg-transparent border w-10 h-10 rounded-full text-white flex justify-center items-center hover:ease-in-out hover:duration-300 hover:bg-white hover:text-[#111111]"
         >
-          <img src={Plus} alt="Plus" className="button-icon" />
-        </AddButton>
-        <ContentWrapper onClick={() => navigate(`/products/${product.handle}`)}>
-          <Image src={product.featuredImage.src} alt="{product.altText}" />
-          <TextWrapper>
-            <Title>{product.title}</Title>
-            <DetailWrapper>
-              <Price>{product.priceRangeV2.maxVariantPrice.amount} DKK</Price>
-              <Vendor>{product.vendor}</Vendor>
-            </DetailWrapper>
-          </TextWrapper>
-        </ContentWrapper>
-      </Wrapper>
+          <PlusIcon className="w-4 h-4" />
+        </button>
+        <div
+          role="button"
+          tabIndex={0}
+          className="w-80 h-[28rem]"
+          onClick={() => navigate(`/products/${product.handle}`)}
+          onKeyDown={() => navigate(`/products/${product.handle}`)}
+        >
+          <img
+            className="w-80 top-0 object-cover m-0"
+            src={product.featuredImage.src}
+            alt="{product.altText}"
+          />
+          <div className="absolute flex justify-between flex-row py-4 px-0 w-80 text-[#111111]">
+            <h2 className="font-semibold m-0 w-32 leading-8">
+              {product.title}
+            </h2>
+            <div className="relative flex flex-col text-right">
+              <p className="font-light m-0 pb-2">
+                {product.priceRangeV2.maxVariantPrice.amount} DKK
+              </p>
+              <p className="font-light m-0">{product.vendor}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     );
 }
 
 export default ProductCard
-
-const Wrapper = styled.div`
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  width: 20rem;
-  top: 0px;
-  gap: 10px;
-  cursor: pointer;
-  position: relative;
-`;
-
-const ContentWrapper = styled.div`
-  height: 28rem;
-`;
-
-const Image = styled.img`
-  width: 20rem;
-  top: 0;
-  object-fit: cover;
-  margin: 0;
-`;
-
-const TextWrapper = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  padding: 1rem 0;
-  width: 20rem;
-`;
-
-const DetailWrapper = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-`;
-
-const Title = styled.p`
-  font-weight: 600;
-  margin: 0;
-  color: #111111;
-  width: 8rem;
-  line-height: 2rem;
-`;
-
-const Price = styled.p`
-  font-weight: normal;
-  margin: 0;
-  padding: 0.5rem 0;
-`;
-
-const Vendor = styled.p`
-  font-weight: normal;
-  margin: 0;
-`;
-
-const AddButton = styled.div`
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: transparent;
-  border: 1px solid #fff;
-  padding: 10px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  :hover {
-    transition: 0.2s;
-    background: #fff;
-  }
-
-  p {
-    margin: 0;
-    color: #fff;
-    font-weight: bold;
-
-    :hover {
-      color: #FF5802
-    }
-  }
-`;

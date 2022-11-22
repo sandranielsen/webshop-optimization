@@ -13,7 +13,7 @@ html {
 /* Slider styling */
 body *::-webkit-scrollbar {
   overflow: hidden; 
-}
+} 
 
 body {
     margin: 0;
@@ -219,19 +219,6 @@ a {
 /* Section - gradient */
 #preview-container {
   background: linear-gradient(#e8b9a2 0%,rgba(249,197,170,.52) 0%,#f4bbf8 100%);
-}
-
-/* Button styling */
-#primary-button {
-    color: #fff;
-    border: 1px solid #fff;
-    background-color: transparent;
-}
-
-#secondary-button {
-    color: #FF5802;
-    border: 1px solid #FF5802;
-    background-color: transparent;
 }
 
 /*** Desktop styling ***/
