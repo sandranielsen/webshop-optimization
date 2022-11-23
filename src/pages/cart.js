@@ -23,18 +23,18 @@ const Cart = ({ data }) => {
         {cart.length > 0 ? (
           cart.map((item, index) => <ProductRow key={index} item={item} />)
         ) : (
-          <div className="flex flex-col gap-8 text-center my-8 text-[#111111]">
+          <div className="flex flex-col gap-16 sm:gap-8 text-center my-8 text-[#111111]">
             <p className="font-semibold text-4xl">Your cart is empty</p>
             <a
               href="/products"
-              className="bg-transparent text-[#ff5802] border border-[#ff5802] rounded-full h-10 w-fit flex justify-center items-center px-16 font-light text-xs m-auto cursor-pointer hover:ease-in-out hover:duration-300 hover:bg-[#ff5802] hover:text-white "
+              className="bg-transparent text-[#ff5802] border border-[#ff5802] rounded-full h-10 w-fit flex justify-center items-center px-16 font-light text-xs m-auto cursor-pointer hover:ease-in-out hover:duration-300 hover:bg-[#ff5802] hover:text-white"
             >
               Continue shopping
             </a>
           </div>
         )}
 
-        <div className="flex flex-row gap-6 overflow-x-scroll snap-mandatory snap-x pt-24">
+        <div className="flex gap-6 flex-col sm:flex-row sm:overflow-x-scroll sm:snap-mandatory sm:snap-x pt-24">
           {nodes?.map((product, index) => (
             <ProductCard key={index} product={product} />
           ))}

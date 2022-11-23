@@ -44,6 +44,16 @@ a {
   text-decoration: none;
 }
 
+button {
+    outline: none;
+}
+
+input {
+    outline: none;
+    padding: 0.7rem;
+}
+
+
 
 /* Fonts */
 @font-face {

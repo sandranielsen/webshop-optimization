@@ -19,27 +19,25 @@ const ProductTemplate = ({ pageContext, data }) => {
   return (
     <LayoutAlt>
       <Seo title={product.title} />
-      <div id="side-padding" className="grid grid-cols-2 gap-8 my-12 mb-16">
+      <div id="side-padding" className="flex flex-col sm:flex-row gap-8 my-12 mb-16">
         <img
-          className="w-full object-cover"
+          className="w-full sm:w-1/2 object-cover"
           src={product.featuredImage.src}
           alt="{product.altText}"
         />
 
-        <div className="flex flex-col gap-8 h-fit w-full">
+        <div className="flex flex-col gap-8 h-fit w-fit">
           <h4 className="m-0 font-light text-base">{product.vendor}</h4>
-          <h1 className="text-4xl">{product.title}</h1>
-          <div className="flex flex-row justify-between items-baseline pb-16">
-            <p className="font-light text-xl">
-              {product.priceRangeV2.maxVariantPrice.amount}DKK
+          <h1 className="text-4xl mb-12">{product.title}</h1>
+          <div className="flex flex-row justify-between sm:items-center pb-16">
+            <p className="font-light text-xl w-1/4 flex flex-start">
+              {product.priceRangeV2.maxVariantPrice.amount} DKK
             </p>
-            <div className="flex flex-row gap-8">
-              <div className="grid grid-cols-2 w-fit gap-5 items-center">
-                <p font-light text-lg>
-                  <label htmlFor="qty"></label>
-                </p>
+            <div className="flex flex-row gap-4">
+              <div className="flex flex-end items-center">
+                <label htmlFor="qty" className="hidden"></label>
                 <input
-                  className=""
+                  className="border rounded-full border-[#ff5802] w-24 font-light text-xs cursor-pointer"
                   placeholder="1"
                   id="qty"
                   type="number"
@@ -52,7 +50,7 @@ const ProductTemplate = ({ pageContext, data }) => {
               />
             </div>
           </div>
-          <p className="text-sm font-light">{product.description}</p>
+          <p className="text-base font-light mt-8">{product.description}</p>
         </div>
       </div>
 

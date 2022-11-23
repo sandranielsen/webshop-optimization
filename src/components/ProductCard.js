@@ -10,7 +10,7 @@ const ProductCard = ({ product }) => {
   const { addVariantToCart } = useStore()
 
     return (
-      <div className="grid justify-center items-center w-80 top-0 gap-4 cursor-pointer relative">
+      <div className="grid justify-center items-center w-full sm:w-80 top-0 gap-4 cursor-pointer relative">
         <button
           onClick={() => addVariantToCart(product, 1)}
           className="absolute top-4 right-4 bg-transparent border w-10 h-10 rounded-full text-white flex justify-center items-center hover:ease-in-out hover:duration-300 hover:bg-white hover:text-[#111111]"
