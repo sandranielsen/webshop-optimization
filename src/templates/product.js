@@ -19,21 +19,19 @@ const ProductTemplate = ({ pageContext, data }) => {
   return (
     <LayoutAlt>
       <Seo title={product.title} />
-      <div id="side-padding" className="grid grid-cols-2 gap-4 my-12 mb-16">
+      <div id="side-padding" className="grid grid-cols-2 gap-8 my-12 mb-16">
         <img
           className="w-full object-cover"
           src={product.featuredImage.src}
           alt="{product.altText}"
         />
 
-        
-
-        <div className="grid h-fit w-full">
-          <h4 className="m-0 font-light text-sm">{product.vendor}</h4>
-          <h1 className="text-3lg mt-4 mb-8">{product.title}</h1>
+        <div className="flex flex-col gap-8 h-fit w-full">
+          <h4 className="m-0 font-light text-base">{product.vendor}</h4>
+          <h1 className="text-4xl">{product.title}</h1>
           <div className="flex flex-row justify-between items-baseline pb-16">
-            <p className="font-light text-lg">
-              {product.priceRangeV2.maxVariantPrice.amount} DKK
+            <p className="font-light text-xl">
+              {product.priceRangeV2.maxVariantPrice.amount}DKK
             </p>
             <div className="flex flex-row gap-8">
               <div className="grid grid-cols-2 w-fit gap-5 items-center">
@@ -58,18 +56,17 @@ const ProductTemplate = ({ pageContext, data }) => {
         </div>
       </div>
 
-      <div id="side-padding" className="flex justify-center">
-        <h2 className="flex text-4xl justify-center mt-24 mb-16">
-          You may also like...
-        </h2>
-      </div>
-      <div
-        id="side-padding"
-        className="flex flex-row gap-6 overflow-x-scroll snap-mandatory snap-x"
-      >
-        {nodes?.map((product, index) => (
-          <ProductCard key={index} product={product} />
-        ))}
+      <div id="side-padding">
+        <div className="flex justify-center">
+          <h2 className="flex text-4xl justify-center mt-24 mb-16">
+            You may also like...
+          </h2>
+        </div>
+        <div className="flex flex-row gap-6 overflow-x-scroll snap-mandatory snap-x">
+          {nodes?.map((product, index) => (
+            <ProductCard key={index} product={product} />
+          ))}
+        </div>
       </div>
     </LayoutAlt>
   );
@@ -111,14 +108,4 @@ export const query = graphql`
   }
 `;
 
-/* const Input = styled.input`
-  border-radius: 20px;
-  border: 1px solid rgba(255, 82, 2, 0.5);
-  padding: 10px 20px;
-  max-width: 80px;
-  font-size: 12px;
-  :focus {
-    outline: none;
-    outline-color: #014c40;
-  }
-`; */
+

@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
         <div
           role="button"
           tabIndex={0}
-          className="w-80 h-[28rem]"
+          className="w-80 h-[26rem]"
           onClick={() => navigate(`/products/${product.handle}`)}
           onKeyDown={() => navigate(`/products/${product.handle}`)}
         >

@@ -1,14 +1,17 @@
 import React from "react";
+import { graphql } from "gatsby";
 
 import useStore from "../context/StoreContext";
 
 import LayoutAlt from "../components/LayoutAlt";
 import Seo from "../components/seo";
 import ProductRow from "../components/ProductRow";
-import SecondaryButton from "../components/SecondaryButton";
+import ProductCard from "../components/ProductCard";
 
-const Cart = () => {
-  const { cart, checkout } = useStore();
+
+const Cart = ({ data }) => {
+  const { cart } = useStore();
+  const { nodes } = data.allShopifyProduct;
 
   return (
     <LayoutAlt>
@@ -17,26 +20,24 @@ const Cart = () => {
         <h1 className="text-white m-auto text-3xl uppercase">Your cart</h1>
       </div>
       <div id="padding">
-        <div className="flex flex-row justify-between w-full gap-8 border-b border-[#aaaaaa] pb-6 mb-12">
-          <p className="font-light text-sm w-2/3 sm:w-1/2">Product</p>
-          <p className="font-light text-sm w-1/6 sm:w-1/4 text-center">
-            Quantity
-          </p>
-          <p className="font-light text-sm w-1/6 sm:w-1/4 text-right">
-            Remove Item
-          </p>
-        </div>
         {cart.length > 0 ? (
           cart.map((item, index) => <ProductRow key={index} item={item} />)
         ) : (
-          <p className="font-semibold text-sm">Your cart is empty.</p>
+          <div className="flex flex-col gap-8 text-center my-8 text-[#111111]">
+            <p className="font-semibold text-4xl">Your cart is empty</p>
+            <a
+              href="/products"
+              className="bg-transparent text-[#ff5802] border border-[#ff5802] rounded-full h-10 w-fit flex justify-center items-center px-16 font-light text-xs m-auto cursor-pointer hover:ease-in-out hover:duration-300 hover:bg-[#ff5802] hover:text-white "
+            >
+              Continue shopping
+            </a>
+          </div>
         )}
-        <div className="flex justify-center sm:justify-end border-t border-[#aaaaaa] pt-12 mt-12">
-          <SecondaryButton
-            text="Checkout"
-            onClick={() => window.open(checkout.webUrl)}
-            disabled={cart.length === 0}
-          />
+
+        <div className="flex flex-row gap-6 overflow-x-scroll snap-mandatory snap-x pt-24">
+          {nodes?.map((product, index) => (
+            <ProductCard key={index} product={product} />
+          ))}
         </div>
       </div>
     </LayoutAlt>
@@ -44,3 +45,36 @@ const Cart = () => {
 };
 
 export default Cart;
+
+export const query = graphql`
+  {
+    allShopifyProduct {
+      nodes {
+        title
+        handle
+        variants {
+          shopifyId
+        }
+        priceRangeV2 {
+          maxVariantPrice {
+            amount
+          }
+        }
+        description
+        featuredImage {
+          src
+          altText
+        }
+        vendor
+        media {
+          preview {
+            image {
+              src
+              altText
+            }
+          }
+        }
+      }
+    }
+  }
+`;
