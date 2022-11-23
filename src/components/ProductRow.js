@@ -7,13 +7,25 @@ const ProductRow = ({ item }) => {
   const { quantity, product } = item;
 
   return (
-    <div id="side-padding" className="grid grid-cols-3 gap-8 items-center">
-      <div className="grid grid-cols-2 gap-4 items-center w-96">
-        <img className="h-20 w-20 object-cover" src={product.featuredImage.src} alt="{product.altText}" />
-        <h4 className="font-semibold text-sm">{product.title}</h4>
+    <div className="flex flex-row gap-8 items-start mb-6">
+      <div className="flex flex-row gap-4 sm:gap-8 items-start w-2/3 sm:w-1/2">
+        <img
+          className="h-24 w-24 sm:h-32 sm:w-32 object-cover"
+          src={product.featuredImage.src}
+          alt="{product.altText}"
+        />
+        <div className="flex flex-col gap-4">
+          <h4 className="font-semibold text-sm sm:text-base">
+            {product.title}
+          </h4>
+          <p className="font-light text-xs sm:text-sm">
+            {product.priceRangeV2.maxVariantPrice.amount} DKK
+          </p>
+        </div>
       </div>
-      <h6>{quantity}</h6>
-      <button className="text-sm cursor-pointer text-red"
+      <h6 className="w-1/6 sm:w-1/4 text-center">{quantity}</h6>
+      <button
+        className="text-sm cursor-pointer w-1/6 sm:w-1/4 text-right"
         onClick={() => removeLineItem(product.variants[0]?.shopifyId)}
       >
         Remove

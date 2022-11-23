@@ -20,7 +20,7 @@ const Collection = ({ pageContext }) => {
 
 export default Collection
 
-export const collectionQuery = graphql`
+export const query = graphql`
   {
     allShopifyCollection {
       edges {
