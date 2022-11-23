@@ -12,7 +12,10 @@ const Cart = () => {
 
   return (
     <LayoutAlt>
-      <Seo title="My Cart" />
+      <Seo title="Cart | MagoMade" />
+      <div className="page-header flex h-40 mb-16">
+        <h1 className="text-white m-auto text-3xl uppercase">Your cart</h1>
+      </div>
       <div id="side-padding">
         <div className="grid grid-cols-3 gap-8">
           <p className="font-semibold text-sm">Product</p>

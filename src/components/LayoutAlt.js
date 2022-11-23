@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 
 import HeaderAlt from "./HeaderAlt";
-import { Link } from "gatsby";
+import Footer from "./Footer";
+
 import "../styles/global.css";
 
 const LayoutAlt = ({ children }) => {
@@ -22,9 +23,7 @@ const LayoutAlt = ({ children }) => {
       <HeaderAlt siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div>
         <main>{children}</main>
-        <footer className="footer-container">
-          <Link>hello</Link>
-        </footer>
+        <Footer />
       </div>
     </>
   );

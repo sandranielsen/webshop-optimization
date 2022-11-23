@@ -79,10 +79,10 @@ export default function HeaderAlt({ siteTitle }) {
               )}
             </Popover>
 
-            <Link to="/" id="nav-item" className="text-base font-medium">
+            <Link to="/blog" id="nav-item" className="text-base font-medium">
               Guides
             </Link>
-            <Link to="/" id="nav-item" className="text-base font-medium">
+            <Link to="/about" id="nav-item" className="text-base font-medium">
               About
             </Link>
           </Popover.Group>
@@ -140,15 +140,15 @@ export default function HeaderAlt({ siteTitle }) {
             </div>
             <div className="space-y-12 py-12 px-8">
               <div className="grid grid-cols-1 gap-y-8">
-                <Link to="/" id="navbar-alt" className="text-3xl">
+                <Link to="/products" id="navbar-alt" className="text-3xl">
                   Patterns
                 </Link>
 
-                <Link to="/" id="navbar-alt" className="text-3xl">
+                <Link to="/blog" id="navbar-alt" className="text-3xl">
                   Guides
                 </Link>
 
-                <Link to="/" id="navbar-alt" className="text-3xl">
+                <Link to="/about" id="navbar-alt" className="text-3xl">
                   About
                 </Link>
               </div>

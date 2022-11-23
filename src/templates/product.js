@@ -25,6 +25,9 @@ const ProductTemplate = ({ pageContext, data }) => {
           src={product.featuredImage.src}
           alt="{product.altText}"
         />
+
+        
+
         <div className="grid h-fit w-full">
           <h4 className="m-0 font-light text-sm">{product.vendor}</h4>
           <h1 className="text-3lg mt-4 mb-8">{product.title}</h1>

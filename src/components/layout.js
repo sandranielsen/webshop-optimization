@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 
 import Header from "./Header";
-import { Link } from "gatsby";
+import Footer from "./Footer";
 import "../styles/global.css";
 
 const Layout = ({ children }) => {
@@ -22,9 +22,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div>
         <main>{children}</main>
-        <footer className="footer-container">
-          <Link>hello</Link>
-        </footer>
+        <Footer />
       </div>
     </>
   );

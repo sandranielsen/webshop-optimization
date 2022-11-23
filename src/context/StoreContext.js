@@ -118,7 +118,6 @@ export const StoreProvider = ({ children }) => {
       setCart(updatedCart);
 
       setLoading(false);
-      alert("Item added to cart!");
     } catch (error) {
       setLoading(false);
       console.error(`Error in addVariantToCart: ${error}`);
