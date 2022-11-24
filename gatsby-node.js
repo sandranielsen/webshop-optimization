@@ -65,41 +65,45 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Query for collections in Shopify
   const collections = await graphql(`
-  query {
-    allShopifyCollection (sort: { fields: [title] }) {
-      edges {
-        node {
-          id
-          title
-          handle
-          products {
-            title 
-            featuredImage {
-              src
-              altText
-            }
-            vendor
-            media {
-              preview {
-                image {
-                  src 
-                  altText
+    query {
+      allShopifyCollection(sort: { fields: [title] }) {
+        edges {
+          node {
+            id
+            title
+            handle
+            products {
+              title
+              handle
+              featuredImage {
+                src
+                altText
+              }
+              vendor
+              media {
+                preview {
+                  image {
+                    src
+                    altText
+                  }
                 }
               }
-            }
-            shopifyId
-            description
-            priceRangeV2 {
-              maxVariantPrice {
-                amount
+              shopifyId
+              description
+              variants {
+                shopifyId
+              }
+              priceRangeV2 {
+                maxVariantPrice {
+                  amount
+                }
               }
             }
           }
         }
       }
     }
-  }
-`);
+  `);
 
   collections.data.allShopifyCollection.edges.forEach(({ node }) => {
     createPage({
@@ -115,9 +119,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
 
 
-   // Query for blog in Shopify
+  // Query for blog in Shopify
 //   const blog = await graphql(`
-//   blogQuery {
+//   query {
 //       allShopifyBlog {
 //         edges {
 //           node {

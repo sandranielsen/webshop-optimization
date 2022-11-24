@@ -2,11 +2,11 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import LayoutAlt from "../components/LayoutAlt";
-import ProductCard from "../components/ProductCard";
 import Seo from "../components/seo";
+import ProductListItem from "../components/ProductListItem";
 
 
-const Collection = ({ pageContext }) => {
+const CollectionTemplate = ({ pageContext }) => {
   const { collection, productCount } = pageContext
 
     return (
@@ -22,8 +22,10 @@ const Collection = ({ pageContext }) => {
           className="flex flex-row flex-wrap justify-between relative"
         >
           {collection.products?.map((product, index) => (
-            <div>
-              <ProductCard key={collection.index} product={product} />
+            <div
+              key={index}
+            >
+              <ProductListItem product={product} />
             </div>
           ))}
         </div>
@@ -31,7 +33,7 @@ const Collection = ({ pageContext }) => {
     );
 }
 
-export default Collection
+export default CollectionTemplate
 
 export const query = graphql`
   {
@@ -43,6 +45,7 @@ export const query = graphql`
           handle
           products {
             title
+            handle
             featuredImage {
               src
               altText
@@ -58,6 +61,9 @@ export const query = graphql`
             }
             shopifyId
             description
+            variants {
+              shopifyId
+            }
             priceRangeV2 {
               maxVariantPrice {
                 amount

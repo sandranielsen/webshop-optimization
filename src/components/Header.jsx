@@ -83,7 +83,7 @@ export default function Header({ siteTitle }) {
                           <Link id="nav-item" to="/collection/english">
                             English
                           </Link>
-                          <Link id="nav-item" to="/collection/danish">
+                          <Link id="nav-item" to="/collection/dansk">
                             Dansk
                           </Link>
                         </div>
