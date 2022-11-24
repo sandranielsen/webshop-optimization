@@ -128,9 +128,19 @@ export default function Header({ siteTitle }) {
 
           {/* Icon items */}
           <div className="md-hidden items-center justify-end flex gap-4">
-            <Link to="/">
-              <MagnifyingGlassIcon id="nav-item" className="h-5 w-5" />
-            </Link>
+           
+              <input
+                type="text"
+                placeholder="Search..."
+                aria-label="Search"
+                className="bg-transparent placeholder-current hidden md:block" 
+              />
+              <button type="button">
+                <Link to="/search-results">
+                  <MagnifyingGlassIcon id="nav-item" className="h-5 w-5" />
+                </Link>
+              </button>
+  
             <Link to="/cart">
               <ShoppingBagIcon id="nav-item" className="h-5 w-5" />
             </Link>

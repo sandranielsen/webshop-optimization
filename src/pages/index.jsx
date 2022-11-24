@@ -15,8 +15,8 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Seo title="Home | MagoMade" />
       <Hero />
-      <div id="side-padding">
-        <h2 className="flex text-4xl justify-center mt-24 mb-16">Patterns</h2>
+      <div id="side-padding" className="my-24">
+        <h2 className="flex text-4xl justify-center mb-16">Patterns</h2>
         <div className="flex flex-row gap-6 overflow-x-scroll snap-mandatory snap-x">
           {nodes?.map((product, index) => (
             <ProductCard key={index} product={product} />
