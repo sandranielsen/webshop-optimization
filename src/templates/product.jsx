@@ -18,8 +18,11 @@ const ProductTemplate = ({ pageContext, data }) => {
 
   return (
     <LayoutAlt>
-      <Seo title={product.title} />
-      <div id="side-padding" className="flex flex-col sm:flex-row gap-8 my-12 mb-16">
+      <Seo title={product.title + " | MagoMade"} />
+      <div
+        id="side-padding"
+        className="flex flex-col sm:flex-row gap-8 my-12 mb-16"
+      >
         <img
           className="w-full sm:w-1/2 object-cover"
           src={product.featuredImage.src}

@@ -1,7 +1,7 @@
 import React from "react";
 
 import useStore from "../context/StoreContext";
-import SecondaryButton from "../components/SecondaryButton";
+import SecondaryButton from "./SecondaryButton";
 
 
 const ProductRow = ({ item }) => {

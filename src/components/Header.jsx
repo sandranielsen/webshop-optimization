@@ -80,10 +80,10 @@ export default function Header({ siteTitle }) {
                           id="dropdown-container"
                           className="relative flex flex-col gap-8 pl-12 pr-56 py-6 my-8 rounded-b-lg"
                         >
-                          <Link id="nav-item" to="/">
+                          <Link id="nav-item" to="/collection/english">
                             English
                           </Link>
-                          <Link id="nav-item" to="/">
+                          <Link id="nav-item" to="/collection/danish">
                             Dansk
                           </Link>
                         </div>

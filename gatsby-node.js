@@ -6,11 +6,21 @@ exports.createPages = async ({ graphql, actions }) => {
   // Query for all products in Shopify
   const result = await graphql(`
     query {
-      allShopifyProduct {
+      allShopifyProduct(sort: { fields: [title] }) {
         edges {
           node {
+            id
             title
             handle
+            collections {
+              handle
+              title
+              metafields {
+                id
+                key
+                value
+              }
+            }
             variants {
               shopifyId
             }
@@ -39,47 +49,24 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  // Iterate over all products and create a new page using a template
+  // Iterates over all products and create a new page using a template
   // The product "handle" is generated automatically by Shopify
   result.data.allShopifyProduct.edges.forEach(({ node }) => {
     createPage({
       path: `/products/${node.handle}`,
-      component: path.resolve(`./src/templates/product.js`),
+      component: path.resolve(`./src/templates/product.jsx`),
       context: {
         product: node,
+        // recommendation: result.data.allShopifyProduct.edges
       },
     });
   });
 
-  // Query for blog in Shopify
-//   const blog = await graphql(`
-//   blogQuery {
-//       allShopifyBlog {
-//         edges {
-//           node {
-//             id
-//             title
-//             url
-//           }
-//         }
-//       }
-//     }
-// `);
-  
-//   blog.data.allShopifyBlog.edges.forEach(({ node }) => {
-//     createPage({
-//       path: `/blog/${node.handle}`,
-//       component: path.resolve(`./src/templates/article.js`),
-//       context: {
-//         blog: node,
-//       },
-//     });
-//   });
 
   // Query for collections in Shopify
   const collections = await graphql(`
   query {
-    allShopifyCollection {
+    allShopifyCollection (sort: { fields: [title] }) {
       edges {
         node {
           id
@@ -117,7 +104,7 @@ exports.createPages = async ({ graphql, actions }) => {
   collections.data.allShopifyCollection.edges.forEach(({ node }) => {
     createPage({
       path: `/collection/${node.handle}`,
-      component: path.resolve(`./src/templates/collection.js`),
+      component: path.resolve(`./src/templates/collection.jsx`),
       context: {
         collection: node,
         productCount: node.products.length,
@@ -126,4 +113,29 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 };
 
- 
+
+
+   // Query for blog in Shopify
+//   const blog = await graphql(`
+//   blogQuery {
+//       allShopifyBlog {
+//         edges {
+//           node {
+//             id
+//             title
+//             url
+//           }
+//         }
+//       }
+//     }
+// `);
+  
+//   blog.data.allShopifyBlog.edges.forEach(({ node }) => {
+//     createPage({
+//       path: `/blog/${node.handle}`,
+//       component: path.resolve(`./src/templates/article.js`),
+//       context: {
+//         blog: node,
+//       },
+//     });
+//   });

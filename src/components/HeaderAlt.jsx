@@ -65,10 +65,10 @@ export default function HeaderAlt({ siteTitle }) {
                           id="dropdown-container-alt"
                           className="relative flex flex-col gap-8 pl-12 pr-56 py-6 my-8 rounded-b-lg"
                         >
-                          <Link id="nav-item" to="/">
+                          <Link id="nav-item" to="/collection/english">
                             English
                           </Link>
-                          <Link id="nav-item" to="/">
+                          <Link id="nav-item" to="/collection/dansk">
                             Dansk
                           </Link>
                         </div>

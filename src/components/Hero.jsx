@@ -1,7 +1,7 @@
 import * as React from "react";
 import { navigate } from "gatsby-link";
 
-import PrimaryButton from "../components/PrimaryButton";
+import PrimaryButton from "./PrimaryButton";
 import BannerImg from "../images/banner-beachy-top-desktop.jpg";
 
 export default function Hero() {
