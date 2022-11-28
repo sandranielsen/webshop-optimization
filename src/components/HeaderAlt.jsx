@@ -79,7 +79,7 @@ export default function HeaderAlt({ siteTitle }) {
               )}
             </Popover>
 
-            <Link to="/blog" id="nav-item" className="text-base font-medium">
+            <Link to="/guides" id="nav-item" className="text-base font-medium">
               Guides
             </Link>
             <Link to="/about" id="nav-item" className="text-base font-medium">
@@ -144,7 +144,7 @@ export default function HeaderAlt({ siteTitle }) {
                   Patterns
                 </Link>
 
-                <Link to="/blog" id="navbar-alt" className="text-3xl">
+                <Link to="/guides" id="navbar-alt" className="text-3xl">
                   Guides
                 </Link>
 

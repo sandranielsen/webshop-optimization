@@ -62,7 +62,6 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-
   // Query for collections in Shopify
   const collections = await graphql(`
     query {
@@ -115,7 +114,33 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
+
+  // Query for blog in MongoDB
+  // Source: https://www.mongodb.com/developer/languages/javascript/gatsby-modern-blog/#getting-started-with-gatsbyjs
+  const { data } = await graphql(`
+    {
+      guides: allMongodbMagomadeBlogGuides {
+        edges {
+          node {
+            id
+          }
+        }
+      }
+    }
+  `);
+
+  for (const { node } of data.guides.edges) {
+    createPage({
+      path: `/guide/${node.id}`,
+      component: path.resolve(`./src/templates/guide.jsx`),
+      context: {
+        id: node.id,
+      },
+    });
+  }
 };
+
+
 
 
 

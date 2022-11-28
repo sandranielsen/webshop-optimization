@@ -7,7 +7,7 @@ import ProductListItem from "../components/ProductListItem";
 
 
 const CollectionTemplate = ({ pageContext }) => {
-  const { collection, productCount } = pageContext
+  const { collection } = pageContext
 
     return (
       <LayoutAlt>
