@@ -6,7 +6,7 @@ export const wrapRootElement = CombinedProvider;
 
 // Checking for sw updates
 export const onServiceWorkerUpdateReady = () => {
-  const answer = window.confirm(
+  const answer = console.log(
     `This application has been updated. ` +
       `Reload to display the latest version?`
   );
