@@ -28,6 +28,7 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-postcss",
+    "gatsby-plugin-netlify",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -62,6 +63,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    
 
     // {
     //   resolve: `gatsby-plugin-offline`,
