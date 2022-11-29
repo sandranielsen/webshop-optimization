@@ -24,11 +24,9 @@ query ($query: String!, $sortKey: ProductSortKeys, $first: Inter, $last: Int, $a
                 handle
                 priceRangeV2: priceRange {
                     minVariantPrice {
-                        currencyCode
                         amount
                     }
                     maxVariantPrice {
-                        currencyCode
                         amount
                     }
                 }

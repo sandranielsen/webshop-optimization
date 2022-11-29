@@ -29,10 +29,10 @@ export default function Footer() {
         {/* Support  */}
         <div className="w-3/12 flex flex-col gap-4">
           <h4 className="text-xl mb-4">Support</h4>
-          <Link className="text-sm" to="/">
+          <Link className="text-sm" to="/terms-and-conditions">
             Terms & Conditions
           </Link>
-          <Link className="text-sm" to="/">
+          <Link className="text-sm" to="/contact">
             Contact
           </Link>
         </div>

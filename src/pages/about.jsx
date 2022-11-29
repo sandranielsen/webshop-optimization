@@ -8,7 +8,7 @@ import AboutImg2 from "../images/crochet-bucket-hat-mini-bag.jpg";
 import Logo from "../images/magomade-logo-about.png";
 
 
-export default function About() {
+export default function AboutPage() {
     return (
       <LayoutAlt>
         <Seo title="About | MagoMade" />
@@ -18,7 +18,7 @@ export default function About() {
           </div>
 
           <div id="side-padding" className="flex flex-col gap-4">
-            <p className="font-extralight">
+            <p className="font-light">
               My Name is Sandra Mago. I'm the person behind the creative
               universe - MagoMade - which I started back in the summer of 2021.
               However I have been crocheting since the first corona-lockdown in
@@ -31,7 +31,7 @@ export default function About() {
               my small and growing business. The dream is to make my hobby a
               career one day.
             </p>
-            <p className="font-extralight">
+            <p className="font-light">
               MagoMade takes inspiration from my Filipino roots, which is also
               where the name Mago originates from. Although I grew up in
               Denmark, Filipino culture has alway been a big part of my everyday
@@ -67,7 +67,7 @@ export default function About() {
           </div>
 
           <div id="side-padding" className="flex flex-col gap-4">
-            <p className="font-extralight">
+            <p className="font-light">
               I primarily make crochet patterns and guides with the goal of
               making crochet easier and more accessible to everyone - whether
               you are a complete beginner or experienced. My recipes are modern
@@ -76,7 +76,7 @@ export default function About() {
               is a lack of designs and patterns aimed at a younger generation.
               My goal is to fill this gap.
             </p>
-            <p className="font-extralight">
+            <p className="font-light">
               It's important to me that my recipes and guides are easy to
               understand and are described in detail. Crochet patterns can often
               be a struggle to read and understand with all the abbreviations
@@ -84,7 +84,7 @@ export default function About() {
               Therefore, my recipes contain both a detailed and a simplified
               guide or step-by-step pictures so that everyone can follow along.
             </p>
-            <p className="font-extralight">
+            <p className="font-light">
               In addition to being contemporary, my recipes are also simple and
               easily adaptable in the sense that you can use the recipe to
               create a piece of clothing in exactly the colors you like, in a

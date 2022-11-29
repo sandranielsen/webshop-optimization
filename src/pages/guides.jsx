@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 import LayoutAlt from "../components/LayoutAlt";
 import Seo from "../components/seo";
 
-const BlogTemplate = (props) => {
+const Guides = (props) => {
   const guides = props.data.allMongodbMagomadeBlogGuides.edges;
 
   return (
@@ -30,7 +30,7 @@ const BlogTemplate = (props) => {
   );
 };
 
-export default BlogTemplate;
+export default Guides;
 
 export const guideQuery = graphql`
   query {

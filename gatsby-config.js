@@ -19,7 +19,37 @@ module.exports = {
       options: {
         dbName: "magomade_blog",
         collection: "guides",
-        connectionString: `mongodb+srv://sandramago:LaicaHund2012!@mongodb-cluster-test.qgwtc.mongodb.net/test?retryWrites=true&w=majority`,
+        connectionString: process.env.MONGODB_URL,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `MagoMade`,
+        short_name: `MagoMade`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#FF5802`,
+        display: `standalone`,
+        icon: `src/images/icon.png`,
+        icons: [
+          {
+            src: `/favicons/android-chrome-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `/favicons/android-chrome-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/about/`, `/guides/*`],
       },
     },
     "gatsby-plugin-image",

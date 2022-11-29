@@ -129,6 +129,7 @@ export default function Header({ siteTitle }) {
           {/* Icon items */}
           <div className="md-hidden items-center justify-end flex gap-4">
            
+            {/* Search functionality */}
               <input
                 type="text"
                 placeholder="Search..."
