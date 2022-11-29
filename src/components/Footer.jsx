@@ -7,18 +7,18 @@ export default function Footer() {
     <div className="flex flex-col">
       <div
         id="padding"
-        className="footer-container flex flex-row justify-between text-white"
+        className="footer-container flex flex-col sm:flex-row items-center sm:items-start sm:justify-between text-white"
       >
         {/* Language input */}
-        <div className="w-6/12">
+        <div className="w-full sm:w-6/12 mb-8">
           <img
             src={Logo}
             alt="MagoMade Logo"
             width={250}
             height={250}
-            className="m-0"
+            className="m-auto sm:m-0"
           />
-          <form>
+          <form className="w-fit m-auto sm:m-0">
             <select id="lang" name="language">
               <option value="eng">English</option>
               <option value="da">Danish</option>
@@ -27,20 +27,23 @@ export default function Footer() {
         </div>
 
         {/* Support  */}
-        <div className="w-3/12 flex flex-col gap-4">
-          <h4 className="text-xl mb-4">Support</h4>
-          <Link className="text-sm" to="/terms-and-conditions">
+        <div className="w-fit sm:w-3/12 flex flex-col gap-4 mb-8 sm:mb-0">
+          <h4 className="text-xl mb-4 text-center sm:text-left">Support</h4>
+          <Link
+            className="text-sm text-center sm:text-left"
+            to="/terms-and-conditions"
+          >
             Terms & Conditions
           </Link>
-          <Link className="text-sm" to="/contact">
+          <Link className="text-sm text-center sm:text-left" to="/contact">
             Contact
           </Link>
         </div>
 
         {/* Socials */}
-        <div className="w-3/12 flex flex-col gap-4">
-          <h4 className="text-xl mb-4">Socials</h4>
-          <div className="flex flex-row gap-4 ">
+        <div className="w-fit sm:w-3/12 flex flex-col gap-4">
+          <h4 className="text-xl mb-4 text-center sm:text-left">Socials</h4>
+          <div className="flex flex-row gap-4">
             <a
               className="rounded-full border border-white h-12 w-12 flex text-white hover:text-[#F4BBF8] hover:bg-white hover:scale-125 transition duration-150 ease-in-out"
               href="https://www.instagram.com/mago.made/"

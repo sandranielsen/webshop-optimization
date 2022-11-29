@@ -38,14 +38,13 @@ const ProductTemplate = ({ pageContext, data }) => {
             </p>
             <div className="flex flex-row gap-4">
               <div className="flex flex-end items-center">
-                <label htmlFor="qty" className="hidden"></label>
-                <input
-                  className="border rounded-full border-[#ff5802] w-24 font-light text-xs cursor-pointer"
-                  placeholder="1"
-                  id="qty"
-                  type="number"
-                  {...bind}
-                />
+                  <input
+                    className="border rounded-full border-[#ff5802] w-24 font-light text-xs cursor-pointer"
+                    placeholder="1"
+                    id="qty"
+                    type="number"
+                    {...bind}
+                  />
               </div>
               <SecondaryButton
                 text="Add to cart"
