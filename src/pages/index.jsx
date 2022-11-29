@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import ProductCard from "../components/ProductCard";
+import GuideCard from "../components/GuideCard";
 import Hero from "../components/Hero";
 
 
@@ -10,6 +11,8 @@ import Seo from "../components/seo";
 
 const IndexPage = ({ data }) => {
   const { nodes } = data.allShopifyProduct;
+    const guides = data.allMongodbMagomadeBlogGuides.edges;
+
 
   return (
     <Layout>
@@ -22,7 +25,15 @@ const IndexPage = ({ data }) => {
             <ProductCard key={index} product={product} />
           ))}
         </div>
-      </div>
+
+        {guides.map((guide, index) => ( 
+          <GuideCard
+            key={index}
+            guide={guide}
+            className="flex flex-col justify-center items-center mb-24"
+          />
+        ))}
+        </div>
     </Layout>
   );};
 
@@ -56,6 +67,16 @@ export const query = graphql`
               altText
             }
           }
+        }
+      }
+    }
+
+    allMongodbMagomadeBlogGuides {
+      edges {
+        node {
+          id
+          title
+          imgUrl
         }
       }
     }
