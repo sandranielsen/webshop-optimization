@@ -11,7 +11,7 @@ import Logo from "../images/magomade-logo-about.png";
 export default function AboutPage() {
     return (
       <LayoutAlt>
-        <Seo title="About | MagoMade" />
+        <Seo title="About" />
         <div>
           <div className="page-header flex h-40 mb-16">
             <h2 className="text-white m-auto text-3xl uppercase">About</h2>

@@ -15,7 +15,7 @@ const Cart = ({ data }) => {
 
   return (
     <LayoutAlt>
-      <Seo title="Cart | MagoMade" />
+      <Seo title="Cart" />
       <div className="page-header flex h-40">
         <h1 className="text-white m-auto text-3xl uppercase">Your cart</h1>
       </div>

@@ -7,7 +7,7 @@ export default function PoliciesPage() {
   return (
     <div>
       <LayoutAlt>
-        <Seo title="Terms & Conditions | MagoMade" />
+        <Seo title="Terms & Conditions" />
         <div className="page-header flex h-40 mb-16">
           <h2 className="text-white m-auto text-3xl uppercase">
             Terms & Conditions

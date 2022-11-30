@@ -10,7 +10,7 @@ class Item extends React.Component {
 
     return (
       <LayoutAlt>
-        <Seo title={guide.title + " | MagoMade"} />
+        <Seo title={guide.title} />
         <div>
           <img src={guide.imgUrl} alt={guide.title} />
           <div id="padding" className="flex flex-col">

@@ -10,7 +10,7 @@ const Guides = (props) => {
 
   return (
     <LayoutAlt>
-      <Seo title="Guides | MagoMade" />
+      <Seo title="Guides" />
       <div className="page-header flex h-40">
         <h1 className="text-white m-auto text-3xl uppercase">Guides</h1>
       </div>

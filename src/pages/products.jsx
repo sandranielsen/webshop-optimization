@@ -12,7 +12,7 @@ const Products = ({ data }) => {
 
     return (
       <LayoutAlt>
-        <Seo title="Products | MagoMade" />
+        <Seo title="Products" />
         <div className="page-header flex h-40 mb-16">
           <h1 className="text-white m-auto text-3xl uppercase">Products</h1>
         </div>

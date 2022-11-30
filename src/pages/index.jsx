@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title="Home | MagoMade" />
+      <Seo title="Home" />
       <Hero />
       <div id="side-padding" className="my-24">
         <h2 className="flex text-4xl justify-center mb-16">Patterns</h2>

@@ -6,7 +6,7 @@ import Seo from "../components/seo";
 export default function ContactPage() {
     return (
       <LayoutAlt>
-        <Seo title="Contact | MagoMade" />
+        <Seo title="Contact" />
         <div className="page-header flex h-40">
           <h2 className="text-white m-auto text-3xl uppercase">Contact</h2>
         </div>

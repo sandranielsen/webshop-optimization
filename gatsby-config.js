@@ -25,6 +25,13 @@ module.exports = {
         connectionString: process.env.MONGODB_URL,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-postcss",
@@ -36,7 +43,7 @@ module.exports = {
         short_name: "MagoMade",
         start_url: "/",
         background_color: "#fff",
-        theme_color: "#FF5802",
+        theme_color: "#F4BBF8",
         display: "standalone",
         display: "standalone",
         icon: "src/images/icon.png",
@@ -62,14 +69,11 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-offline`,
-    
-
-    // {
-    //   resolve: `gatsby-plugin-offline`,
-    //   options: {
-    //     precachePages: [`/about/`, `/guides/`],
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/about/`, `/guides/`, `/offline/`],
+      },
+    },
   ],
 };
