@@ -13,11 +13,11 @@ const Products = ({ data }) => {
     return (
       <LayoutAlt>
         <Seo title="Products" />
-        <div className="page-header flex h-40 mb-16">
+        <div className="page-header flex h-40">
           <h3 className="text-white m-auto text-3xl uppercase">Products</h3>
         </div>
 
-        <div id="side-padding" className="flex flex-row flex-wrap justify-between relative">
+        <div id="padding" className="flex flex-row flex-wrap justify-between relative">
           {nodes?.map((product, index) => (
             <ProductCard key={index} product={product} />
           ))}

@@ -20,6 +20,7 @@ function classNames(...classes) {
 }
 
 export default function Header({ siteTitle }) {
+  
   /* transparent header functionality */
   const [navbar, setNavbar] = useState(false);
   const changeBackground = () => {
@@ -128,20 +129,19 @@ export default function Header({ siteTitle }) {
 
           {/* Icon items */}
           <div className="md-hidden items-center justify-end flex gap-4">
-           
             {/* Search functionality */}
-              <input
-                type="text"
-                placeholder="Search..."
-                aria-label="Search"
-                className="bg-transparent placeholder-current hidden md:block" 
-              />
-              <button type="button">
-                <Link to="/search-results">
-                  <MagnifyingGlassIcon id="nav-item" className="h-5 w-5" />
-                </Link>
-              </button>
-  
+            <input
+              type="text"
+              placeholder="Search..."
+              aria-label="Search"
+              className="bg-transparent placeholder-current hidden md:block"
+            />
+            <button type="button">
+              <Link to="/search-results">
+                <MagnifyingGlassIcon id="nav-item" className="h-5 w-5" />
+              </Link>
+            </button>
+
             <Link to="/cart">
               <ShoppingBagIcon id="nav-item" className="h-5 w-5" />
             </Link>
@@ -176,15 +176,27 @@ export default function Header({ siteTitle }) {
             </div>
             <div className="space-y-12 py-12 px-8">
               <div className="grid grid-cols-1 gap-y-8">
-                <Link to="/products" id="navbar-alt" className="text-3xl">
+                <Link
+                  to="/products"
+                  id="navbar-alt"
+                  className="text-3xl font-light"
+                >
                   Patterns
                 </Link>
 
-                <Link to="/guides" id="navbar-alt" className="text-3xl">
+                <Link
+                  to="/guides"
+                  id="navbar-alt"
+                  className="text-3xl font-light"
+                >
                   Guides
                 </Link>
 
-                <Link to="/about" id="navbar-alt" className="text-3xl">
+                <Link
+                  to="/about"
+                  id="navbar-alt"
+                  className="text-3xl font-light"
+                >
                   About
                 </Link>
               </div>

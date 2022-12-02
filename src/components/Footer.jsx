@@ -5,18 +5,18 @@ import Logo from "../images/magomade-logo-footer.png";
 export default function Footer() {
   return (
     <div id="section-padding" className="footer-container flex flex-col">
-      <div className="flex flex-col sm:flex-row items-center sm:items-start sm:justify-between text-white">
+      <div className="flex flex-col md:flex-row items-center md:items-start md:justify-between text-white">
         {/* Language input */}
-        <div className="w-full sm:w-6/12 mb-8">
+        <div className="w-full md:w-6/12 mb-8">
           <img
             src={Logo}
             alt="MagoMade Logo"
             width={250}
             height={250}
-            className="m-auto sm:m-0"
+            className="m-auto md:m-0"
           />
 
-          <form className="w-fit text-sm border border-white px-4 rounded-full mx-auto mt-4 sm:mt-8 sm:mx-0">
+          <form className="w-fit text-sm border border-white px-4 rounded-full mx-auto mt-4 md:mt-8 md:mx-0">
             <select
               id="lang"
               name="language"
@@ -33,22 +33,22 @@ export default function Footer() {
         </div>
 
         {/* Support  */}
-        <div className="w-fit sm:w-3/12 flex flex-col gap-4 mb-8 sm:mb-0">
-          <h5 className="text-xl mb-4 text-center sm:text-left">Support</h5>
+        <div className="w-fit md:w-3/12 flex flex-col gap-4 mb-8 md:mb-0">
+          <h5 className="text-xl mb-4 text-center md:text-left">Support</h5>
           <Link
-            className="text-sm text-center sm:text-left"
+            className="text-sm text-center md:text-left"
             to="/terms-and-conditions"
           >
             Terms & Conditions
           </Link>
-          <Link className="text-sm text-center sm:text-left" to="/contact">
+          <Link className="text-sm text-center md:text-left" to="/contact">
             Contact
           </Link>
         </div>
 
         {/* Socials */}
-        <div className="w-fit sm:w-3/12 flex flex-col gap-4">
-          <h5 className="text-xl mb-4 text-center sm:text-left">Socials</h5>
+        <div className="w-fit md:w-3/12 flex flex-col gap-4">
+          <h5 className="text-xl mb-4 text-center md:text-left">Socials</h5>
           <div className="flex flex-row gap-4">
             <a
               className="rounded-full border border-white h-12 w-12 flex text-white hover:text-[#F4BBF8] hover:bg-white hover:scale-125 transition duration-150 ease-in-out"
@@ -135,7 +135,7 @@ export default function Footer() {
       </div>
 
       {/* Payment list */}
-      <div className="flex flex-row gap-4 border-t border-white w-full justify-center mt-8 pt-8 sm:mt-12 sm:pt-12  text-white">
+      <div className="flex flex-row gap-4 border-t border-white w-full justify-center mt-8 pt-8 md:mt-12 md:pt-12  text-white">
         <svg
           id="Payment_Icons"
           data-name="Payment Icons"

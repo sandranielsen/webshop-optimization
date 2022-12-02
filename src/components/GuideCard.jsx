@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 const GuideCard = ({guide}) => {
     
     return (
-      <div className="flex flex-row h-full justify-between relative">
+      <div className="flex flex-row h-full justify-between text-center sm:text-start relative">
         <div className=" hidden sm:block sm:w-1/2 ">
           <img
             src={guide.node.imgUrl}
@@ -17,7 +17,7 @@ const GuideCard = ({guide}) => {
           <h3 className="text-2xl sm:text-3xl uppercase">{guide.node.title}</h3>
           <Link
             to={"/guide/" + guide.node.id}
-            className="bg-transparent text-white border border-white rounded-full h-10 w-fit flex justify-center items-center px-16 font-light text-xs cursor-pointer hover:ease-in-out hover:duration-300 hover:bg-white hover:text-[#111111]"
+            className="bg-transparent text-white border border-white rounded-full h-10 w-fit flex justify-center items-center mx-auto sm:mx-0 px-16 font-light text-xs cursor-pointer hover:ease-in-out hover:duration-300 hover:bg-white hover:text-[#111111]"
           >
             Read more
           </Link>

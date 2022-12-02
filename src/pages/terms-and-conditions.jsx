@@ -8,13 +8,13 @@ export default function PoliciesPage() {
     <div>
       <LayoutAlt>
         <Seo title="Terms & Conditions" />
-        <div className="page-header flex h-40 mb-16">
+        <div className="page-header flex h-40">
           <h3 className="text-white m-auto text-3xl uppercase">
             Terms & Conditions
           </h3>
         </div>
 
-        <div id="side-padding" className="flex flex-col gap-4">
+        <div id="padding" className="flex flex-col gap-4">
           <h5 className="text-xl">Conditions</h5>
           <p className="font-light text-base">
             Patterns purchased at www.magomade.dk is for private use only and
@@ -40,7 +40,7 @@ export default function PoliciesPage() {
           </p>
         </div>
 
-        <div id="padding" className="flex flex-col gap-4">
+        <div id="padding" className="flex flex-col gap-4  mb-8">
           <h5 className="text-xl">Right of Withdrawel</h5>
           <p className="font-light text-base">
             No right of withdrawel is granted for digital products purchased as

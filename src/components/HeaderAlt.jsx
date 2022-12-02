@@ -140,15 +140,27 @@ export default function HeaderAlt({ siteTitle }) {
             </div>
             <div className="space-y-12 py-12 px-8">
               <div className="grid grid-cols-1 gap-y-8">
-                <Link to="/products" id="navbar-alt" className="text-3xl">
+                <Link
+                  to="/products"
+                  id="navbar-alt"
+                  className="text-3xl font-light"
+                >
                   Patterns
                 </Link>
 
-                <Link to="/guides" id="navbar-alt" className="text-3xl">
+                <Link
+                  to="/guides"
+                  id="navbar-alt"
+                  className="text-3xl font-light"
+                >
                   Guides
                 </Link>
 
-                <Link to="/about" id="navbar-alt" className="text-3xl">
+                <Link
+                  to="/about"
+                  id="navbar-alt"
+                  className="text-3xl font-light"
+                >
                   About
                 </Link>
               </div>

@@ -10,8 +10,8 @@ export default function ContactPage() {
         <div className="page-header flex h-40">
           <h3 className="text-white m-auto text-3xl uppercase">Contact</h3>
         </div>
-        <div id="padding" className="flex flex-col items-center">
-          <h5 className="font-semibold text-xl mb-4">
+        <div id="padding" className="flex flex-col items-center mb-8">
+          <h5 className="font-semibold text-xl text-center sm:text-start mb-4">
             For inquiries please feel free to contact:
           </h5>
           <p className="font-light text-base">MagoMade v/ Sandra Mago</p>

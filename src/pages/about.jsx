@@ -13,11 +13,11 @@ export default function AboutPage() {
       <LayoutAlt>
         <Seo title="About" />
         <div>
-          <div className="page-header flex h-40 mb-16">
+          <div className="page-header flex h-40">
             <h3 className="text-white m-auto text-3xl uppercase">About</h3>
           </div>
 
-          <div id="side-padding" className="flex flex-col gap-4">
+          <div id="padding" className="flex flex-col gap-4">
             <p className="font-light text-base">
               My Name is Sandra Mago. I'm the person behind the creative
               universe - MagoMade - which I started back in the summer of 2021.
@@ -55,14 +55,14 @@ export default function AboutPage() {
               alt="Crochet Bucket Hat & Mini Bag"
               width={300}
               height={300}
-              className="w-1/2"
+              className="w-full sm:w-1/2"
             />
             <img
               src={AboutImg}
               alt="Lola Mago's House Porch"
               width={300}
               height={300}
-              className="w-1/2"
+              className="w-full sm:w-1/2"
             />
           </div>
 
@@ -96,14 +96,14 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div id="padding" className="flex flex-col justify-between gap-8">
+          <div id="padding" className="flex flex-col justify-between gap-8 my-8">
             <h4 className="text-xl m-auto">With love,</h4>
             <img
               src={Logo}
               alt="MagoMade Logo"
               width={500}
               height={500}
-              className="w-1/3 m-auto"
+              className="w-full sm:w-1/3 m-auto"
             />
           </div>
         </div>

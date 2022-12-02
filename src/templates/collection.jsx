@@ -22,9 +22,7 @@ const CollectionTemplate = ({ pageContext }) => {
           className="flex flex-row flex-wrap justify-between relative"
         >
           {collection.products?.map((product, index) => (
-            <div
-              key={index}
-            >
+            <div key={index}>
               <ProductListItem product={product} />
             </div>
           ))}

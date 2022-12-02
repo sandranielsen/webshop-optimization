@@ -21,7 +21,7 @@ const ProductTemplate = ({ pageContext, data }) => {
       <Seo title={product.title} />
       <div
         id="side-padding"
-        className="flex flex-col sm:flex-row gap-8 my-12 mb-16"
+        className="flex flex-col sm:flex-row gap-8 my-12 sm:mb-16"
       >
         <div className="w-full">
           <img
@@ -41,12 +41,12 @@ const ProductTemplate = ({ pageContext, data }) => {
 
         <div className="flex flex-col gap-8 h-fit w-fit">
           <h6 className="m-0 font-light text-base">{product.vendor}</h6>
-          <h2 className="text-4xl mb-12">{product.title}</h2>
-          <div className="flex flex-row justify-between sm:items-center pb-16">
-            <h5 className="font-light text-xl w-1/4 flex flex-start">
+          <h2 className="text-4xl sm:mb-12">{product.title}</h2>
+          <div className="flex flex-row justify-between items-center pb-16">
+            <h5 className="font-light text-lg sm:text-xl w-1/4 flex flex-start">
               {product.priceRangeV2.maxVariantPrice.amount} DKK
             </h5>
-            <div className="flex flex-row gap-4">
+            <div className="flex flex-row sm:gap-4">
               <div className="flex flex-end items-center">
                 <input
                   className="border rounded-full border-[#ff5802] w-24 font-light text-xs cursor-pointer"
@@ -59,6 +59,7 @@ const ProductTemplate = ({ pageContext, data }) => {
               <SecondaryButton
                 text="Add to cart"
                 onClick={() => addVariantToCart(product, bind.value)}
+                className=""
               />
             </div>
           </div>
@@ -68,7 +69,7 @@ const ProductTemplate = ({ pageContext, data }) => {
 
       <div id="side-padding">
         <div className="flex justify-center">
-          <h2 className="flex text-4xl justify-center mt-24 mb-16">
+          <h2 className="flex text-3xl sm:text-4xl justify-center mt-12 mb-8 sm:mt-24 sm:mb-16">
             You may also like...
           </h2>
         </div>
