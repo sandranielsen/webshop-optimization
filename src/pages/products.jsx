@@ -14,7 +14,7 @@ const Products = ({ data }) => {
       <LayoutAlt>
         <Seo title="Products" />
         <div className="page-header flex h-40 mb-16">
-          <h1 className="text-white m-auto text-3xl uppercase">Products</h1>
+          <h3 className="text-white m-auto text-3xl uppercase">Products</h3>
         </div>
 
         <div id="side-padding" className="flex flex-row flex-wrap justify-between relative">

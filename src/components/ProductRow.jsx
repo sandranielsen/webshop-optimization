@@ -38,17 +38,17 @@ const ProductRow = ({ item }) => {
           />
 
           <div className="flex flex-col gap-4">
-            <h4 className="font-semibold text-sm sm:text-base">
+            <h6 className="font-semibold text-sm sm:text-base">
               {product.title}
-            </h4>
+            </h6>
             <p className="font-light text-xs sm:text-sm">{product.vendor}</p>
           </div>
         </div>
 
         <h6 className="w-1/6 sm:w-1/4 text-center">{quantity}</h6>
-        <p className="w-1/6 sm:w-1/4 font-light text-xs sm:text-sm text-right">
+        <h6 className="w-1/6 sm:w-1/4 font-light text-xs sm:text-sm text-right">
           {product.priceRangeV2.maxVariantPrice.amount} DKK
-        </p>
+        </h6>
       </div>
 
       <div className="flex justify-center sm:justify-end border-t border-[#aaaaaa] pt-12 mt-12">

@@ -8,15 +8,15 @@ export default function ContactPage() {
       <LayoutAlt>
         <Seo title="Contact" />
         <div className="page-header flex h-40">
-          <h2 className="text-white m-auto text-3xl uppercase">Contact</h2>
+          <h3 className="text-white m-auto text-3xl uppercase">Contact</h3>
         </div>
         <div id="padding" className="flex flex-col items-center">
-          <p className="font-semibold text-lg mb-4">
+          <h5 className="font-semibold text-xl mb-4">
             For inquiries please feel free to contact:
-          </p>
-          <p className="font-light">MagoMade v/ Sandra Mago</p>
-          <p className="font-light">CVR: 43520822</p>
-          <p className="font-light">E-mail: sandra@magomade.dk</p>
+          </h5>
+          <p className="font-light text-base">MagoMade v/ Sandra Mago</p>
+          <p className="font-light text-base">CVR: 43520822</p>
+          <p className="font-light text-base">E-mail: sandra@magomade.dk</p>
         </div>
       </LayoutAlt>
     );

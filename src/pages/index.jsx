@@ -18,22 +18,21 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Seo title="Home" />
       <Hero />
-      <div id="side-padding" className="my-24">
+      <div id="side-padding" className="mt-24 mb-12">
         <h2 className="flex text-4xl justify-center mb-16">Patterns</h2>
         <div className="flex flex-row gap-6 overflow-x-scroll snap-mandatory snap-x">
           {nodes?.map((product, index) => (
             <ProductCard key={index} product={product} />
           ))}
         </div>
-
-        {guides.map((guide, index) => ( 
-          <GuideCard
-            key={index}
-            guide={guide}
-            className="flex flex-col justify-center items-center mb-24"
-          />
-        ))}
+      </div>
+      <div className="slider">
+        <div className="slides">
+          {guides.map((guide, index) => (
+            <GuideCard key={index} guide={guide} />
+          ))}
         </div>
+      </div>
     </Layout>
   );};
 
@@ -77,6 +76,7 @@ export const query = graphql`
           id
           title
           imgUrl
+          type
         }
       }
     }

@@ -20,6 +20,10 @@ body {
     overflow-x: hidden;
 }
 
+h1 {
+  font-size: 1.5rem;
+}
+
 h1, h2 {
   font-family: HelveticaNeue;
   font-weight: 900;
@@ -36,6 +40,10 @@ h4, h5, h6 {
   font-weight: 700;
 }
 
+h4 {
+  font-size: 1.15rem;
+}
+
 p, a, button, table {
   font-family: HelveticaNeue;
 }
@@ -48,7 +56,7 @@ button {
     outline: none;
 }
 
-input {
+input, select {
     outline: none;
     padding: 0.7rem;
     font-family: HelveticaNeue;
@@ -57,8 +65,8 @@ input {
 }
 
 
-
 /* Fonts */
+
 @font-face {
   font-family: 'HelveticaNeue';
   font-weight: 300;
@@ -112,6 +120,14 @@ input {
 
 #padding {
   padding: 2rem;
+}
+
+#section-padding {
+  padding: 3rem 2rem;
+}
+
+#bottom-padding {
+  padding-bottom: 2rem;
 }
 
 /* Navbar */
@@ -217,6 +233,35 @@ input {
   width: 12px;
 }
 
+/* Guide preview section */
+
+.slider {
+  width: 100%;  
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: -1.05rem;
+}
+
+.slides > div {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 100%;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 0.5s;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Page banner styling */
 
 /* Footer - gradient */
@@ -230,7 +275,7 @@ input {
 }
 
 /* Section - gradient */
-#preview-container {
+.guide-container {
   background: linear-gradient(#e8b9a2 0%,rgba(249,197,170,.52) 0%,#f4bbf8 100%);
 }
 
@@ -244,6 +289,16 @@ input {
   #padding  {
     padding: 4rem;
   }
+
+  #section-padding  {
+    padding: 5rem 4rem;
+  }
+  
+  #bottom-padding {
+  padding-bottom: 4rem;
+  } 
+  
+  
   .navbar {
     padding: 1rem 4rem;
   }
@@ -253,10 +308,5 @@ input {
   }
 
 }
-
-
-
-
-
 
 

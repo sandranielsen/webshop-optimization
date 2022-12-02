@@ -18,12 +18,12 @@ export default function Hero() {
 
       <div
         id="side-padding"
-        className="absolute grid text-white w-12 z-20 bottom-12"
+        className="absolute grid gap-4 text-white w-[36rem] z-20 bottom-12"
       >
-        <h6>New</h6>
+        <h6 className="font-light text-base">New</h6>
 
         <div className="sm:text-center lg:text-left">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+          <h1 className="text-4xl font-bold italic uppercase sm:text-5xl">
             Beachy Top Pattern
           </h1>
 

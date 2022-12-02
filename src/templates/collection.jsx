@@ -13,9 +13,9 @@ const CollectionTemplate = ({ pageContext }) => {
       <LayoutAlt>
         <Seo title={collection.title} />
         <div className="page-header flex h-40">
-          <h1 className="text-white m-auto text-3xl uppercase">
+          <h3 className="text-white m-auto text-3xl uppercase">
             {collection.title}
-          </h1>
+          </h3>
         </div>
         <div
           id="padding"

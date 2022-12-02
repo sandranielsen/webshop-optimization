@@ -1,47 +1,32 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { navigate } from "gatsby-link";
 
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+import SecondaryButton from "../components/SecondaryButton";
+import LayoutAlt from "../components/LayoutAlt";
+import Seo from "../components/seo";
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+
 
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
+    <main>
+      <LayoutAlt>
+        <Seo title="404 - Page not found" />
+        <div className="page-header flex h-40">
+          <h3 className="text-white m-auto text-3xl uppercase">
+            Page not found
+          </h3>
+        </div>
+        <div id="padding">
+          <p className="text-base font-light mb-8">Sorry, we couldn’t find what you were looking for.</p>
+          <SecondaryButton
+            text="Back to homepage"
+            onClick={() => navigate("/")}
+          />
+        </div>
+      </LayoutAlt>
     </main>
-  )
+  );
 }
 
 export default NotFoundPage

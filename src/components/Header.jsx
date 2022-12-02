@@ -54,7 +54,7 @@ export default function Header({ siteTitle }) {
                   <Popover.Button
                     className={classNames(
                       open ? "text-white" : "text-white",
-                      "group inline-flex items-center rounded-md text-base font-medium"
+                      "group inline-flex items-center rounded-md text-base font-light"
                     )}
                   >
                     <span id="nav-item">Patterns</span>
@@ -94,10 +94,10 @@ export default function Header({ siteTitle }) {
               )}
             </Popover>
 
-            <Link to="/guides" id="nav-item" className="text-base font-medium">
+            <Link to="/guides" id="nav-item" className="text-base font-light">
               Guides
             </Link>
-            <Link to="/about" id="nav-item" className="text-base font-medium">
+            <Link to="/about" id="nav-item" className="text-base font-light">
               About
             </Link>
           </Popover.Group>
