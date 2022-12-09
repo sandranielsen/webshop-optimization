@@ -7,7 +7,7 @@ const ImageGallery = ({ media }) => {
         <img
           className="object-cover"
           src={media.preview.image.src}
-          alt="{media.image.altText}"
+          alt="{media.altText}"
         />
       </div>
     );

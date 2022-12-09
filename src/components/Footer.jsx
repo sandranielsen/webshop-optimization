@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import Logo from "../images/magomade-logo-footer.png";
+import { StaticImage } from "gatsby-plugin-image";
+
 
 export default function Footer() {
   return (
@@ -8,12 +9,12 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row items-center md:items-start md:justify-between text-white">
         {/* Language input */}
         <div className="w-full md:w-6/12 mb-8">
-          <img
-            src={Logo}
+          <StaticImage
+            src="../images/magomade-logo-footer.png"
             alt="MagoMade Logo"
-            width={250}
-            height={250}
-            className="m-auto md:m-0"
+            width={800}
+            quality={100}
+            className="m-auto w-80 md:m-0"
           />
 
           <form className="w-fit text-sm border border-white px-4 rounded-full mx-auto mt-4 md:mt-8 md:mx-0">

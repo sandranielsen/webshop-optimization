@@ -2,10 +2,7 @@ import * as React from "react";
 
 import LayoutAlt from "../components/LayoutAlt";
 import Seo from "../components/seo";
-
-import AboutImg from "../images/lola's-house.jpg";
-import AboutImg2 from "../images/crochet-bucket-hat-mini-bag.jpg";
-import Logo from "../images/magomade-logo-about.png";
+import { StaticImage } from "gatsby-plugin-image";
 
 
 export default function AboutPage() {
@@ -50,19 +47,21 @@ export default function AboutPage() {
             id="padding"
             className="flex flex-col justify-between gap-4 md:flex-row"
           >
-            <img
-              src={AboutImg2}
+            <StaticImage
+              src="../images/crochet-bucket-hat-mini-bag.jpg"
               alt="Crochet Bucket Hat & Mini Bag"
               width={300}
               height={300}
               className="w-full sm:w-1/2"
+              placeholder="blurred"
             />
-            <img
-              src={AboutImg}
+            <StaticImage
+              src="../images/lola's-house.jpg"
               alt="Lola Mago's House Porch"
               width={300}
               height={300}
               className="w-full sm:w-1/2"
+              placeholder="blurred"
             />
           </div>
 
@@ -96,14 +95,18 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div id="padding" className="flex flex-col justify-between gap-8 my-8">
+          <div
+            id="padding"
+            className="flex flex-col justify-between gap-8 my-8"
+          >
             <h4 className="text-xl m-auto">With love,</h4>
-            <img
-              src={Logo}
+            <StaticImage
+              src="../images/magomade-logo-about.png"
               alt="MagoMade Logo"
               width={500}
               height={500}
               className="w-full sm:w-1/3 m-auto"
+              placeholder="blurred"
             />
           </div>
         </div>

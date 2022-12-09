@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import React from "react";
 import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 import { Popover, Transition } from "@headlessui/react";
 import {
@@ -11,8 +12,6 @@ import {
 } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
-import Logo from "../images/logo-white.png";
-import LogoColor from "../images/logo-color.png";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -90,13 +89,14 @@ export default function HeaderAlt({ siteTitle }) {
           {/* Logo */}
           <div className="flex justify-center">
             <Link to="/">
-              <img
-                src={LogoColor}
+              <StaticImage
+                src="../images/logo-color.png"
                 alt={siteTitle}
                 className="header-logo"
                 id="logo-secondary"
                 width={70}
                 height={70}
+                placeholder="blurred"
               />
             </Link>
           </div>
@@ -167,13 +167,14 @@ export default function HeaderAlt({ siteTitle }) {
             </div>
             <div className="flex justify-center my-56 h-full w-screen">
               <Link to="/">
-                <img
-                  src={Logo}
+                <StaticImage
+                  src="../images/logo-white.png"
                   alt={siteTitle}
                   className="header-logo"
                   id="logo-primary"
                   width={120}
                   height={120}
+                  placeholder="blurred"
                 />
               </Link>
             </div>

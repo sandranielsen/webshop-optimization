@@ -33,6 +33,8 @@ module.exports = {
       },
     },
     "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-postcss",
     "gatsby-plugin-netlify",
@@ -72,7 +74,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-offline`,
       options: {
-        precachePages: [`/about/`, `/guides/`, `/offline/`],
+        precachePages: [`/about/`, `/guides/`],
       },
     },
   ],
