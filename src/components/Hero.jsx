@@ -23,7 +23,8 @@ export default function Hero() {
           src="../images/banner-beachy-top-mobile.jpg"
           alt="Beachy Top Pattern"
           width={600}
-          className="block sm:hidden w-full h-screen object-cover m-0"
+          quality="100"
+          className="hidden sm:block w-full h-screen object-cover m-0"
           placeholder="blurred"
         />
       </div>
