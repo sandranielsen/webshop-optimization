@@ -52,6 +52,7 @@ export default function AboutPage() {
               alt="Crochet Bucket Hat & Mini Bag"
               width={300}
               height={300}
+              quality={100}
               className="w-full sm:w-1/2"
               placeholder="blurred"
             />
@@ -59,7 +60,8 @@ export default function AboutPage() {
               src="../images/lola's-house.jpg"
               alt="Lola Mago's House Porch"
               width={300}
-              height={300}
+              height={400}
+              quality={100}
               className="w-full sm:w-1/2"
               placeholder="blurred"
             />
@@ -103,9 +105,10 @@ export default function AboutPage() {
             <StaticImage
               src="../images/magomade-logo-about.png"
               alt="MagoMade Logo"
-              width={500}
-              height={500}
-              className="w-full sm:w-1/3 m-auto"
+              width={420}
+              height={100}
+              quality={100}
+              className="w-2/3 sm:w-1/3 m-auto"
               placeholder="blurred"
             />
           </div>
