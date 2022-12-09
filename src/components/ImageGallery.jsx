@@ -8,6 +8,9 @@ const ImageGallery = ({ media }) => {
           className="object-cover"
           src={media.preview.image.src}
           alt="{media.altText}"
+          width={150}
+          height={150}
+          loading="lazy"
         />
       </div>
     );

@@ -96,6 +96,7 @@ export default function HeaderAlt({ siteTitle }) {
                 id="logo-secondary"
                 width={70}
                 height={70}
+                quality={100}
                 placeholder="blurred"
               />
             </Link>
@@ -174,6 +175,7 @@ export default function HeaderAlt({ siteTitle }) {
                   id="logo-primary"
                   width={120}
                   height={120}
+                  quality={100}
                   placeholder="blurred"
                 />
               </Link>

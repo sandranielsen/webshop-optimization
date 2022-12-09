@@ -28,6 +28,8 @@ const ProductTemplate = ({ pageContext, data }) => {
             className="object-cover w-full"
             src={product.featuredImage.src}
             alt="{product.altText}"
+            width={150}
+            height={150}
             loading="lazy"
           />
 

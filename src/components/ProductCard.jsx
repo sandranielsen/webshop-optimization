@@ -28,6 +28,9 @@ const ProductCard = ({ product }) => {
             className="w-fit sm:w-80 top-0 object-cover m-0"
             src={product.featuredImage.src}
             alt="{product.altText}"
+            width={150}
+            height={150}
+            loading="lazy"
           />
           <div className="absolute flex justify-between flex-row py-4 px-0 w-80 text-[#111111]">
             <h6 className="font-semibold text-base m-0 w-32 leading-8">
