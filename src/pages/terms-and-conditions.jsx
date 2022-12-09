@@ -22,7 +22,7 @@ export default function PoliciesPage() {
           </p>
         </div>
 
-        <div id="padding" className="flex flex-col gap-4">
+        <div id="side-padding" className="flex flex-col gap-4 mb-8 sm:mb-16">
           <h5 className="text-xl">Payment</h5>
           <p className="font-light text-base">
             MagoMade accepts online payments with Visa, Maestro, Mastercard,
