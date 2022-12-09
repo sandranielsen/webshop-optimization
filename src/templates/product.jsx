@@ -28,8 +28,9 @@ const ProductTemplate = ({ pageContext, data }) => {
             className="object-cover w-full"
             src={product.featuredImage.src}
             alt="{product.altText}"
+            loading="lazy"
           />
-          
+
           <div className="grid grid-cols-3 gap-4 mt-12">
             {product.media?.map((media, index) => (
               <div key={index}>
@@ -73,7 +74,10 @@ const ProductTemplate = ({ pageContext, data }) => {
             You may also like...
           </h2>
         </div>
-        <div id="bottom-padding" className="flex flex-row gap-6 overflow-x-scroll snap-mandatory snap-x">
+        <div
+          id="bottom-padding"
+          className="flex flex-row gap-6 overflow-x-scroll snap-mandatory snap-x"
+        >
           {nodes?.map((product, index) => (
             <ProductCard key={index} product={product} />
           ))}

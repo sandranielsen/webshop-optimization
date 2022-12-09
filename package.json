@@ -27,6 +27,7 @@
     "gatsby-source-filesystem": "^5.0.0",
     "gatsby-source-mongodb": "^5.2.0",
     "gatsby-source-shopify": "^8.0.0",
+    "gatsby-transformer-remark": "^6.2.0",
     "gatsby-transformer-sharp": "^5.0.0",
     "graphql": "^16.6.0",
     "isomorphic-fetch": "^3.0.0",
