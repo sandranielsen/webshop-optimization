@@ -25,9 +25,12 @@ const ProductListItem = ({ product }) => {
           className="w-80 top-0 object-cover m-0"
           src={product.featuredImage.src}
           alt="{product.altText}"
+          loading="lazy"
         />
         <div className="absolute flex justify-between flex-row py-4 px-0 w-80 text-[#111111]">
-          <h6 className="font-semibold text-base m-0 w-32 leading-8">{product.title}</h6>
+          <h6 className="font-semibold text-base m-0 w-32 leading-8">
+            {product.title}
+          </h6>
           <div className="relative flex flex-col text-right">
             <p className="font-light text-base m-0 pb-2">
               {product.priceRangeV2.maxVariantPrice.amount} DKK

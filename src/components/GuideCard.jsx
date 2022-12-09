@@ -11,6 +11,7 @@ const GuideCard = ({guide}) => {
             alt={guide.node.title}
             width={1000}
             height={200}
+            loading="lazy"
             className="h-[32rem] w-full sm:object-cover"
           />
         </div>
