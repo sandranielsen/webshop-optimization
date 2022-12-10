@@ -12,7 +12,14 @@ class Item extends React.Component {
       <LayoutAlt>
         <Seo title={guide.title} />
         <div>
-          <img src={guide.bannerUrl} alt={guide.title} loading="lazy" />
+          <img
+            src={guide.bannerUrl}
+            alt={guide.title}
+            width={1500}
+            height={160}
+            loading="lazy"
+            quality={100}
+          />
           <div id="padding" className="flex flex-col mb-8">
             <h6 className="text-base m-auto font-light pt-6 pb-6 sm:pt-12">
               {guide.type}

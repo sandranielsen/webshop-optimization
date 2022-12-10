@@ -9,9 +9,10 @@ const GuideCard = ({guide}) => {
           <img
             src={guide.node.imgUrl}
             alt={guide.node.title}
-            width={1000}
-            height={200}
+            width={600}
+            height={600}
             loading="lazy"
+            quality={100}
             className="h-[32rem] w-full sm:object-cover"
           />
         </div>

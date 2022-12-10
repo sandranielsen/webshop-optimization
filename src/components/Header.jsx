@@ -113,6 +113,7 @@ export default function Header({ siteTitle }) {
                 id="logo-primary"
                 width={70}
                 height={70}
+                loading="lazy"
               />
             </Link>
             <Link to="/">
@@ -123,6 +124,7 @@ export default function Header({ siteTitle }) {
                 id="logo-secondary"
                 width={70}
                 height={70}
+                loading="lazy"
               />
             </Link>
           </div>
@@ -210,6 +212,7 @@ export default function Header({ siteTitle }) {
                   id="logo-primary"
                   width={120}
                   height={120}
+                  loading="lazy"
                 />
               </Link>
             </div>

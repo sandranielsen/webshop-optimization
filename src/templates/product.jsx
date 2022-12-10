@@ -49,7 +49,7 @@ const ProductTemplate = ({ pageContext, data }) => {
             <h5 className="font-light text-lg sm:text-xl w-1/4 flex flex-start">
               {product.priceRangeV2.maxVariantPrice.amount} DKK
             </h5>
-            <div className="flex flex-row sm:gap-4">
+            <div className="flex flex-row gap-4">
               <div className="flex flex-end items-center">
                 <input
                   className="border rounded-full border-[#ff5802] w-24 font-light text-xs cursor-pointer"

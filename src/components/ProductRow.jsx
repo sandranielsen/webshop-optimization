@@ -35,6 +35,9 @@ const ProductRow = ({ item }) => {
             className="h-24 w-24 sm:h-32 sm:w-32 object-cover"
             src={product.featuredImage.src}
             alt="{product.altText}"
+            width={150}
+            height={150}
+            loading="lazy"
           />
 
           <div className="flex flex-col gap-4">

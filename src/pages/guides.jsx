@@ -26,7 +26,14 @@ const Guides = (props) => {
               key={index}
               className="flex flex-col justify-center items-center mb-6 sm:mb-24"
             >
-              <img src={guide.node.bannerUrl} alt={guide.node.title} />
+              <img
+                src={guide.node.bannerUrl}
+                alt={guide.node.title}
+                width={1200}
+                height={160}
+                loading="lazy"
+                quality={100}
+              />
               <h6 className="text-base font-light pt-12 pb-6">
                 {guide.node.type}
               </h6>

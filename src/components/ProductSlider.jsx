@@ -25,9 +25,11 @@ const ProductCard = ({ product }) => {
           onKeyDown={() => navigate(`/products/${product.handle}`)}
         >
           <img
-            className="w-80 top-0 object-cover m-0"
+            className="w-40 sm:w-80 top-0 object-cover m-0"
             src={product.featuredImage.src}
             alt="{product.altText}"
+            width={150}
+            height={150}
             loading="lazy"
           />
           <div className="absolute flex justify-between flex-row py-4 px-0 w-64 sm:w-80 text-[#111111]">
