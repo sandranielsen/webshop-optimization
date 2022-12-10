@@ -16,7 +16,7 @@ export default function Hero() {
           alt="Beachy Top Pattern"
           width={2000}
           quality="100"
-          className="hidden sm:block w-full h-screen object-cover m-0"
+          className="hero-desktop"
           placeholder="blurred"
         />
         <StaticImage
@@ -24,7 +24,7 @@ export default function Hero() {
           alt="Beachy Top Pattern"
           width={600}
           quality="100"
-          className="block sm:hidden w-full h-screen object-cover m-0"
+          className="hero-mobile"
           placeholder="blurred"
         />
       </div>
