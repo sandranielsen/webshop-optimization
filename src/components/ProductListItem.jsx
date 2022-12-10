@@ -22,7 +22,7 @@ const ProductListItem = ({ product }) => {
         onKeyDown={() => navigate(`/products/${product.handle}`)}
       >
         <img
-          className="w-40 sm:w-80 top-0 object-cover m-0"
+          className="w-80 top-0 object-cover m-0"
           src={product.featuredImage.src}
           alt="{product.altText}"
           width={150}
