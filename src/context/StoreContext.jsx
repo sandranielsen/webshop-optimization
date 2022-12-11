@@ -2,6 +2,7 @@ import React, { createContext, useState, useEffect, useContext } from "react";
 import fetch from "isomorphic-fetch";
 import Client from "shopify-buy";
 
+/* Source: https://designcode.io/react-hooks-handbook-gatsby-shopify-3 */
 const client = Client.buildClient(
   {
     domain: process.env.GATSBY_SHOPIFY_STORE_URL,

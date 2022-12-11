@@ -20,8 +20,8 @@ function classNames(...classes) {
 }
 
 export default function Header({ siteTitle }) {
-  
-  /* transparent header functionality */
+
+  /* transparent header functionality - source: https://dev.to/cesareuseche/react-navbar-change-background-color-on-scroll-react-js-gatsby-2a39 */
   const [navbar, setNavbar] = useState(false);
   const changeBackground = () => {
     if (window.scrollY >= 80) {
@@ -36,6 +36,7 @@ export default function Header({ siteTitle }) {
   });
 
   return (
+    /* Source: https://tailwindui.com/components/marketing/elements/headers */
     <Popover className={navbar ? "navbar active" : "navbar"}>
       <div>
         <div className="grid grid-cols-3 w-full justify-between items-center">

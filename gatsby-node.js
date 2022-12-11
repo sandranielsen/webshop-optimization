@@ -1,5 +1,7 @@
 const path = require(`path`);
 
+/* Source: https://designcode.io/react-hooks-handbook-gatsby-shopify-2 */
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
