@@ -11,22 +11,26 @@ export default function Hero() {
     <div>
       <div className="z-1">
         <div className="absolute flex w-full h-screen bg-black/[.3] sm:bg-black/[.2] z-10"></div>
-        <StaticImage
-          src="../images/banner-beachy-top-desktop.jpg"
-          alt="Beachy Top Pattern"
-          width={2000}
-          quality="100"
-          className="hero-desktop"
-          placeholder="blurred"
-        />
-        <StaticImage
-          src="../images/banner-beachy-top-mobile.jpg"
-          alt="Beachy Top Pattern"
-          width={600}
-          quality="100"
-          className="hero-mobile"
-          placeholder="blurred"
-        />
+        <div className="hero-desktop">
+          <StaticImage
+            src="../images/banner-beachy-top-desktop.jpg"
+            alt="Beachy Top Pattern"
+            width={2000}
+            quality="100"
+            className="hero-desktop"
+            placeholder="blurred"
+          />
+        </div>
+        <div className="hero-desktop">
+          <StaticImage
+            src="../images/banner-beachy-top-mobile.jpg"
+            alt="Beachy Top Pattern"
+            width={600}
+            quality="100"
+            className="hero-mobile"
+            placeholder="blurred"
+          />
+        </div>
       </div>
 
       <div
