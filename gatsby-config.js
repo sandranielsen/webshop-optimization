@@ -32,7 +32,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    
+
     "gatsby-transformer-remark",
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
@@ -47,7 +47,7 @@ module.exports = {
         short_name: "MagoMade",
         start_url: "/",
         background_color: "#fff",
-        theme_color: "#F4BBF8",
+        theme_color: "#fff",
         display: "standalone",
         display: "standalone",
         icon: "src/images/icon.png",
