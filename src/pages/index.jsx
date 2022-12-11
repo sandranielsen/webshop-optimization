@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => {
       <Hero />
       <div id="side-padding" className="mt-12 mb-6 sm:mt-24 sm:mb-12">
         <h2 className="flex text-4xl justify-center mb-16">Patterns</h2>
-        <div className="flex flex-row gap-6 overflow-x-scroll snap-mandatory snap-x">
+        <div className="flex flex-row gap-6 overflow-x-scroll overflow-y-hidden snap-mandatory snap-x">
           {nodes?.map((product, index) => (
             <ProductSlider key={index} product={product} />
           ))}
