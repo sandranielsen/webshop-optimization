@@ -232,7 +232,6 @@ input, select {
 .hero-desktop {
   display: none !important; 
   width: 100% !important;
-  height: 100vh !important;
   object-fit: cover !important;
   margin: 0 !important;
 }
@@ -240,7 +239,6 @@ input, select {
 .hero-mobile {
   display: block !important;
   width: 100% !important;
-  height: 100vh !important;
   object-fit: cover !important;
   margin: 0 !important;
 
